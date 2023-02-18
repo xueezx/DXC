@@ -6,5 +6,15 @@
 </template>
 
 <style lang="scss">
-
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+a{
+  text-decoration: none;
+}
+ul,li{
+  list-style: none;
+}
 </style>
