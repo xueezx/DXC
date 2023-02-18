@@ -80,6 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
+    min-width: 1200px;
     width: 100%;
     height: 90px;
     border-top: 4px solid #ceaf59;
@@ -135,7 +136,7 @@ export default {
                     overflow: hidden;
 
                     >img {
-                        width: 100%;
+                        width: 80%;
                         padding: 0;
                     }
                 }
