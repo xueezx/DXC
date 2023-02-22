@@ -73,9 +73,8 @@
         </div>
     </div>
 
-    <div class="shipin">
-      <video autoplay controls poster src="../assets/video/shipin.mp4"></video>
-    </div>
+    <!-- 二级路由占位符 -->
+    <router-view/>
     
     <!-- 页脚导航栏 -->
     <div class="nav-footnav">
@@ -281,12 +280,7 @@
     }
 
 }
-  >.shipin{
-    width: 100%;
-    >video{
-      width: 100%;
-    }
-  }
+
   //页脚导航栏
 >.nav-footnav {
     width: 100%;
