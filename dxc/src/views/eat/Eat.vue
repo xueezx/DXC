@@ -34,7 +34,65 @@
           </div>
         </div>
       </div>
-      <div class="xxshipin"></div>
+      <div class="xxshipin">
+        <div class="tupian">
+          <img class="xx1" src="../../assets/xxsp.jpg" alt="" />
+          <span>了解更多</span>
+        </div>
+        <div class="xx2">
+          <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/taosu.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/mh.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxtu">
+              <img class="sp" src="../../assets/npl.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/dhs.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="jrshipin"></div>
       <div class="mianbao"></div>
       <div class="jianguo"></div>
