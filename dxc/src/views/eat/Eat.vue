@@ -93,7 +93,34 @@
           </div>
         </div>
       </div>
-      <div class="jrshipin"></div>
+      <div class="jrshipin">
+        <div class="tupian">
+          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
+          <span>了解更多</span>
+        </div>
+        <div class="jr">
+          <div class="jr1">
+            <div class="tt1">
+              <img src="../../assets/ssyb.jpg" alt="" />
+            </div>
+            <div class="text">
+              <h1>苏式月饼</h1>
+              <p>非遗技艺，百年传承。</p>
+              <a class="go" href="#">请进</a>
+            </div>
+          </div>
+          <div class="jr1">
+            <div class="tt1">
+              <img src="../../assets/ssyb.jpg" alt="" />
+            </div>
+            <div class="text">
+              <h1>苏式月饼</h1>
+              <p>非遗技艺，百年传承。</p>
+              <a class="go" href="#">请进</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="mianbao"></div>
       <div class="jianguo"></div>
       <div class="sudong"></div>
@@ -293,4 +320,54 @@ export default {};
     }
   }
 }
+.jrshipin {
+  width: 100%;
+}
+.jr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .jr1 {
+      width: 585px;
+      height: 585px;
+      position: relative;
+      .tt1 {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .text {
+        width: 292px;
+        height: 240px;
+        color: #b59846;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        h1 {
+          text-align: center;
+          font-size: 30px;
+          padding-top: 15px;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 14px;
+          padding: 0 30px;
+        }
+        .go {
+          width: 44px;
+          line-height: 44px;
+          background: #bfa764;
+          color: #fff;
+          text-align: center;
+          border-radius: 50%;
+          position: absolute;
+          align-items: center;
+          right: 135px;
+          bottom: 90px;
+        }
+      }
+    }
+  }
 </style>
