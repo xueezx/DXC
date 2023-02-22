@@ -14,12 +14,12 @@
         text-color="#333"
         active-text-color="#fff"
       >
-        <el-menu-item index="/eat/pastry">糕点系列</el-menu-item>
-        <el-menu-item index="/eat/snack">休闲食品</el-menu-item>
-        <el-menu-item index="/eat/festive">节日食品</el-menu-item>
-        <el-menu-item index="/eat/bread">面包主食</el-menu-item>
-        <el-menu-item index="/eat/nut">坚果系列</el-menu-item>
-        <el-menu-item index="/eat/frozen">速冻食品</el-menu-item>
+        <el-menu-item index="/home/eat-home/pastry">糕点系列</el-menu-item>
+        <el-menu-item index="/home/eat-home/snack">休闲食品</el-menu-item>
+        <el-menu-item index="/home/eat-home/festive">节日食品</el-menu-item>
+        <el-menu-item index="/home/eat-home/bread">面包主食</el-menu-item>
+        <el-menu-item index="/home/eat-home/nut">坚果系列</el-menu-item>
+        <el-menu-item index="/home/eat-home/frozen">速冻食品</el-menu-item>
       </el-menu>
     </div>
 
@@ -73,14 +73,15 @@ export default {
     margin: 0 auto;
     overflow: hidden;
 }
+
 .el-menu-item {
   font-size: 20px;
     line-height: 52px;
 align-items: center;
 }
 .el-menu-demo :hover{
-    background: #ceaf59;
-    color: #FFFFFF;
+    background: #ceaf59 !important;
+    color: #FFFFFF !important;
 }
 .contain {
   width: 1200px;
