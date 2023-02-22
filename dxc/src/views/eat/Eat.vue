@@ -10,11 +10,45 @@
         </el-breadcrumb>
       </div>
       <div class="gaodian">
-        <div class="gd1">
-          <img src="../../assets/gdxl.jpg" alt="" />
+        <div class="tupian">
+          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
           <span>了解更多</span>
         </div>
         <div class="gd2">
+          <div class="gd2-2">
+            <div class="pic">
+              <img src="../../assets/szgk.jpg" alt="" />
+            </div>
+            <div class="txt">
+              <h1>
+                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+              </h1>
+              <span
+                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+              >
+              <a href="#" class="d1">请进</a>
+            </div>
+            <div class="logo">
+              <img src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+          <div class="gd2-2">
+            <div class="pic">
+              <img src="../../assets/szgk.jpg" alt="" />
+            </div>
+            <div class="txt">
+              <h1>
+                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+              </h1>
+              <span
+                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+              >
+              <a href="#" class="d1">请进</a>
+            </div>
+            <div class="logo">
+              <img src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
           <div class="gd2-2">
             <div class="pic">
               <img src="../../assets/szgk.jpg" alt="" />
@@ -36,7 +70,7 @@
       </div>
       <div class="xxshipin">
         <div class="tupian">
-          <img class="xx1" src="../../assets/xxsp.jpg" alt="" />
+          <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
           <span>了解更多</span>
         </div>
         <div class="xx2">
@@ -45,7 +79,7 @@
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/taosu.jpg" alt="" />
+              <img class="sp" src="../../assets/1206536a45853d5-0_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -63,13 +97,13 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/mh.jpg" alt="" />
+              <img class="sp" src="../../assets/13104325014bc9a0d-1_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
           <div class="xx2-1">
             <div class="xxtu">
-              <img class="sp" src="../../assets/npl.jpg" alt="" />
+              <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -87,7 +121,7 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/dhs.jpg" alt="" />
+              <img class="sp" src="../../assets/133956535abf3882d-2_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
@@ -95,13 +129,13 @@
       </div>
       <div class="jrshipin">
         <div class="tupian">
-          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
+          <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
           <span>了解更多</span>
         </div>
         <div class="jr">
           <div class="jr1">
             <div class="tt1">
-              <img src="../../assets/ssyb.jpg" alt="" />
+              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
             </div>
             <div class="text">
               <h1>苏式月饼</h1>
@@ -111,7 +145,7 @@
           </div>
           <div class="jr1">
             <div class="tt1">
-              <img src="../../assets/ssyb.jpg" alt="" />
+              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
             </div>
             <div class="text">
               <h1>苏式月饼</h1>
@@ -121,9 +155,152 @@
           </div>
         </div>
       </div>
-      <div class="mianbao"></div>
-      <div class="jianguo"></div>
-      <div class="sudong"></div>
+      <div class="mianbao">
+        <div class="tupian">
+          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
+          <span>了解更多</span>
+        </div>
+        <div class="gd2">
+          <div class="gd2-2">
+            <div class="pic">
+              <img src="../../assets/szgk.jpg" alt="" />
+            </div>
+            <div class="txt">
+              <h1>
+                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+              </h1>
+              <span
+                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+              >
+              <a href="#" class="d1">请进</a>
+            </div>
+            <div class="logo">
+              <img src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+          <div class="gd2-2">
+            <div class="pic">
+              <img src="../../assets/szgk.jpg" alt="" />
+            </div>
+            <div class="txt">
+              <h1>
+                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+              </h1>
+              <span
+                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+              >
+              <a href="#" class="d1">请进</a>
+            </div>
+            <div class="logo">
+              <img src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+          <div class="gd2-2">
+            <div class="pic">
+              <img src="../../assets/szgk.jpg" alt="" />
+            </div>
+            <div class="txt">
+              <h1>
+                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+              </h1>
+              <span
+                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+              >
+              <a href="#" class="d1">请进</a>
+            </div>
+            <div class="logo">
+              <img src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jianguo">
+        <div class="tupian">
+          <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
+          <span>了解更多</span>
+        </div>
+        <div class="xx2">
+          <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/1206536a45853d5-0_cut300260.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/13104325014bc9a0d-1_cut300260.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxtu">
+              <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+          </div>
+          <div class="xx2-1">
+            <div class="xxzi">
+              <h2>桃酥</h2>
+              <p>
+                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+              </p>
+            </div>
+            <div class="xxtu">
+              <img class="sp" src="../../assets/133956535abf3882d-2_cut300260.jpg" alt="" />
+              <img class="logo" src="../../assets/logo.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sudong">
+        <div class="tupian">
+          <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
+          <span>了解更多</span>
+        </div>
+        <div class="jr">
+          <div class="jr1">
+            <div class="tt1">
+              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+            </div>
+            <div class="text">
+              <h1>苏式月饼</h1>
+              <p>非遗技艺，百年传承。</p>
+              <a class="go" href="#">请进</a>
+            </div>
+          </div>
+          <div class="jr1">
+            <div class="tt1">
+              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+            </div>
+            <div class="text">
+              <h1>苏式月饼</h1>
+              <p>非遗技艺，百年传承。</p>
+              <a class="go" href="#">请进</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -160,7 +337,7 @@ export default {};
 
 .n1 {
   position: absolute;
-  top: 30px;
+  top: 14px;
   left: 110px;
 }
 
