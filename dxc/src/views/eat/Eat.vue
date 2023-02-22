@@ -3,11 +3,13 @@
     <div class="bng"></div>
     <div class="main">
       <div class="mianbaoxie">
-        <p>您现在的位置：</p>
-        <el-breadcrumb separator-class="el-icon-arrow-right" class="n1">
-          <el-breadcrumb-item><a href="#">首页</a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">产品</a></el-breadcrumb-item>
-        </el-breadcrumb>
+        <!-- 面包屑导航 -->
+      <el-breadcrumb class="bc" separator-class="el-icon-arrow-right">
+        <p>您现在的位置:</p>
+        <el-breadcrumb-item v-for="item in $route.meta.thumb" :key="item">{{
+          item
+        }}</el-breadcrumb-item>
+      </el-breadcrumb>
       </div>
       <div class="gaodian">
         <div class="tupian">
@@ -90,6 +92,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxzi">
               <h2>桃酥</h2>
               <p>
@@ -102,6 +107,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxtu">
               <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
@@ -114,6 +122,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxzi">
               <h2>桃酥</h2>
               <p>
@@ -236,6 +247,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxzi">
               <h2>桃酥</h2>
               <p>
@@ -248,6 +262,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxtu">
               <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
@@ -260,6 +277,9 @@
             </div>
           </div>
           <div class="xx2-1">
+            <div class="qjin">
+              <a href="#">请进</a>
+            </div>
             <div class="xxzi">
               <h2>桃酥</h2>
               <p>
@@ -329,16 +349,10 @@ export default {};
   margin: 0 auto;
 }
 
-.mianbaoxie {
+.bc {
   display: flex;
-  position: relative;
-  padding: 10px 0;
-}
-
-.n1 {
-  position: absolute;
-  top: 14px;
-  left: 110px;
+  align-items: flex-end;
+  margin: 30px 0px;
 }
 
 .tupian {
@@ -441,8 +455,8 @@ export default {};
   display: block;
   position: relative;
 
-  .qjin {
-    display: block;
+}
+.qjin {
     width: 42px;
     line-height: 42px;
     text-align: center;
@@ -456,7 +470,6 @@ export default {};
       color: #fff;
     }
   }
-
   .qjin:hover {
     background: red;
   }
@@ -496,7 +509,6 @@ export default {};
       line-height: 18px;
     }
   }
-}
 .jrshipin {
   width: 100%;
 }

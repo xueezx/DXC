@@ -13,10 +13,20 @@ const routes = [
     path: '/home',
     name: 'home',
     component: HomeView,
-    children:[
+    children: [
       {
         path: 'eat',
-        component: () => import('../views/eat/Eat.vue')
+        component: () => import('../views/eat/Eat.vue'),
+        meta: {
+          thumb: ['首页','产品']
+        }
+      },
+      {
+        path: 'eat-home',
+        component: () => import('../views/eat/EatHome.vue'),
+        meta: {
+          thumb: ['首页','产品','糕点系列','散点']
+        }
       },
       {
         path: 'index',
@@ -24,11 +34,11 @@ const routes = [
       },
     ]
   },
-  
+
   {
     path: '/about',
     name: 'about',
-    component: () => import( '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
   }
 ]
 
