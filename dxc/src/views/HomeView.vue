@@ -387,4 +387,14 @@
     }
 }
 }
+*{
+  margin: 0;
+  padding: 0;
+}
+img{
+  display: block;
+}
+ul{
+  list-style: none;
+}
 </style>

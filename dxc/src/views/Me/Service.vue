@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <h3>服务理念</h3>
+    <div class="two">
+      <img src="../../assets/me/fwln.jpg" class="font">
+    </div>
+    <p>
+      “厚道做人，地道做事，成人达己，追求卓越”是稻香村集团的品牌精神，也是稻香村集团的服务理念。
+      这不仅仅是一句标语，一句口号，也是稻香村人做人做事的原则和标准。
+    </p>
+    
+  </div>
+</template>
+
+<script>
+  export default {
+    
+  }
+</script>
+
+<style lang="scss" scoped>
+.two{
+  width: 100%;
+  height: 173px;
+  background-image: url('../../assets/me/bj1.jpg');
+  background-size: contain; 
+  display: flex;
+}
+.font{
+  width: 200px;
+  margin: auto;
+}
+</style>
