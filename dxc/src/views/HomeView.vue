@@ -9,7 +9,7 @@
             <ul>
                 <li>
                     <img src="../assets/7.png" alt="">
-                    <span>我们</span>
+                    <span @click="$router.push('/home/me')">我们</span>
                     <div class="nav-center-yc">
                         <ul>
                             <li class="one">企业介绍</li>
@@ -386,5 +386,17 @@
 
     }
 }
+}
+
+//基础样式
+*{
+  margin: 0;
+  padding: 0;
+}
+img{
+  display: block;
+}
+ul{
+  list-style: none;
 }
 </style>
