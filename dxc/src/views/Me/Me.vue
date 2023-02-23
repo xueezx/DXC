@@ -13,12 +13,12 @@
       text-color="#333"
       active-text-color="#fff"
     >
-      <el-menu-item index="/me/introduction">企业介绍</el-menu-item>
-      <el-menu-item index="/me/service">服务理念</el-menu-item>
-      <el-menu-item index="/me/strategy">国际战略</el-menu-item>
-      <el-menu-item index="/me/branch">分支机构</el-menu-item>
-      <el-menu-item index="/me/foodsafety">食品安全</el-menu-item>
-      <el-menu-item index="/me/social">社会责任</el-menu-item>
+      <el-menu-item index="/home/me/introduction">企业介绍</el-menu-item>
+      <el-menu-item index="/home/me/service">服务理念</el-menu-item>
+      <el-menu-item index="/home/me/strategy">国际战略</el-menu-item>
+      <el-menu-item index="/home/me/branch">分支机构</el-menu-item>
+      <el-menu-item index="/home/me/foodsafety">食品安全</el-menu-item>
+      <el-menu-item index="/home/me/social">社会责任</el-menu-item>
     </el-menu>
 
     <!-- main -->

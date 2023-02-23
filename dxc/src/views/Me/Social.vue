@@ -22,7 +22,7 @@
           由慈善总会统一协调分配给受灾民众。
         </p>
         <el-button type="warning" class="enter"
-          icon="el-icon-right" circle @click="$router.push('/me/social/news-detail')"
+          icon="el-icon-right" circle @click="$router.push('/home/me/social/news-detail')"
         >
         </el-button>
       </div>
@@ -43,7 +43,7 @@
           稻香村集团北京基地作为活动分会场，见证了20对新人的新婚时刻。
         </p>
         <el-button type="warning" class="enter"
-          icon="el-icon-right" circle @click="$router.push('/me/social/news-detail02')"
+          icon="el-icon-right" circle @click="$router.push('/home/me/social/news-detail02')"
         >
         </el-button>
       </div>
