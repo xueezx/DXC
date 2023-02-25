@@ -14,7 +14,7 @@
         text-color="#333"
         active-text-color="#fff"
       >
-        <el-menu-item index="/home/eat-home">糕点系列</el-menu-item>
+        <el-menu-item index="/home/pastry">糕点系列</el-menu-item>
         <el-menu-item index="/home/snack">休闲食品</el-menu-item>
         <el-menu-item index="/home/festive">节日食品</el-menu-item>
         <el-menu-item index="/home/bread">面包主食</el-menu-item>
@@ -25,10 +25,15 @@
 
     <!-- main -->
     <div class="fu">
-      <ul class="erzi">
-        <li>散点</li>
-        <li>糕点礼盒</li>
-      </ul>
+      <el-menu
+        :default-active="activeIndex" 
+        class="erzi" background-color="#fcf5e1" active-text-color="#d4b970">
+        <el-menu-item index="1">休闲零食</el-menu-item>
+        <el-menu-item index="2">休闲糕点</el-menu-item>
+        <el-menu-item index="3">桃酥</el-menu-item>
+        <el-menu-item index="4">鸡蛋卷</el-menu-item>
+        <el-menu-item index="5">瓦片系列</el-menu-item>
+      </el-menu>
     </div>
     <div class="contain">
       <div class="mbx">
@@ -42,7 +47,7 @@
       </div>
       <div class="tupian">
         <div class="bg">
-          <img src="../../assets/gdxl.jpg" alt="" />
+          <img src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
         </div>
       </div>
       <div class="xzq">
@@ -71,14 +76,14 @@
         <div class="nei">
           <div class="gd2-2" v-for="item in 5" :key="item.value">
             <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
+              <img src="../../assets/13104325014bc9a0d-1_cut300260.jpg" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+                <a href="#">蜜麻花</a>
               </h1>
               <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+                >精选优质高质面粉原料，传统工艺制作，经典传统三种口味，鲜香可口，唇齿留香，回味无穷。</span
               >
               <a href="#" class="d1">请进</a>
             </div>
@@ -96,6 +101,7 @@
 export default {
   data() {
     return {
+      activeIndex: '1',
       options: [
         {
           value: "选项1",
@@ -174,6 +180,8 @@ export default {
   width: 100%;
   background: #fcf5e1;
   border-bottom: 1px solid #d9ae6e;
+  overflow: hidden;
+
 }
 .erzi {
   width: 1200px;
@@ -254,19 +262,24 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
+.nei :nth-child(3n){
+  margin-right: 0;
+}
 .gd2-2 {
   width: 380px;
   height: 380px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
 }
 
 .pic {
   img {
-    width: 100%;
+    width: 380px;
   }
 }
 
@@ -275,9 +288,10 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   padding: 0 20px;
   color: #fff;
-  width: 354px;
+  width: 380px;
   height: 158px;
   bottom: 0;
+  box-sizing: border-box;
 }
 
 .txt h1 {

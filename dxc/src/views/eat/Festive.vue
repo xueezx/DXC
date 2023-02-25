@@ -14,21 +14,24 @@
         text-color="#333"
         active-text-color="#fff"
       >
-        <el-menu-item index="/home/eat-home">糕点系列</el-menu-item>
+        <el-menu-item index="/home/pastry">糕点系列</el-menu-item>
         <el-menu-item index="/home/snack">休闲食品</el-menu-item>
-        <el-menu-item index="/home/eat-home/festive">节日食品</el-menu-item>
-        <el-menu-item index="/home/eat-home/bread">面包主食</el-menu-item>
-        <el-menu-item index="/home/eat-home/nut">坚果系列</el-menu-item>
-        <el-menu-item index="/home/eat-home/frozen">速冻食品</el-menu-item>
+        <el-menu-item index="/home/festive">节日食品</el-menu-item>
+        <el-menu-item index="/home/bread">面包主食</el-menu-item>
+        <el-menu-item index="/home/nut">坚果系列</el-menu-item>
+        <el-menu-item index="/home/frozen">速冻食品</el-menu-item>
       </el-menu>
     </div>
 
     <!-- main -->
     <div class="fu">
-      <ul class="erzi">
-        <li>散点</li>
-        <li>糕点礼盒</li>
-      </ul>
+      <el-menu
+        :default-active="activeIndex" 
+        class="erzi" background-color="#fcf5e1" active-text-color="#d4b970">
+        <el-menu-item index="1">中秋月饼</el-menu-item>
+        <el-menu-item index="2">端午粽子</el-menu-item>
+        <el-menu-item index="3">年品贺礼</el-menu-item>
+      </el-menu>
     </div>
     <div class="contain">
       <div class="mbx">
@@ -42,7 +45,7 @@
       </div>
       <div class="tupian">
         <div class="bg">
-          <img src="../../assets/gdxl.jpg" alt="" />
+          <img src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
         </div>
       </div>
       <div class="xzq">
@@ -71,14 +74,14 @@
         <div class="nei">
           <div class="gd2-2" v-for="item in 12" :key="item.value">
             <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
+              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+                <a href="#">苏式月饼</a>
               </h1>
               <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+                >非遗技艺，百年传承。</span
               >
               <a href="#" class="d1">请进</a>
             </div>
@@ -102,6 +105,7 @@
 export default {
   data() {
     return {
+      activeIndex:'1',
       options: [
         {
           value: "选项1",
@@ -180,6 +184,8 @@ export default {
   width: 100%;
   background: #fcf5e1;
   border-bottom: 1px solid #d9ae6e;
+  overflow: hidden;
+
 }
 .erzi {
   width: 1200px;
@@ -256,9 +262,12 @@ export default {
 }
 .nei {
   width: 100%;
-  justify-content: space-between;
+  justify-content: start;
   display: flex;
   flex-wrap: wrap;
+}
+.nei :nth-child(3n){
+  margin-right: 0;
 }
 .gd2-2 {
   width: 380px;
@@ -266,11 +275,15 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
 }
 
 .pic {
   img {
-    width: 100%;
+    width: 380px;
   }
 }
 
@@ -279,9 +292,10 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   padding: 0 20px;
   color: #fff;
-  width: 354px;
+  width: 380px;
   height: 158px;
   bottom: 0;
+  box-sizing: border-box;
 }
 
 .txt h1 {

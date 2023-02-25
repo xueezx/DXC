@@ -14,7 +14,7 @@
         text-color="#333"
         active-text-color="#fff"
       >
-        <el-menu-item index="/home/eat-home">糕点系列</el-menu-item>
+        <el-menu-item index="/home/pastry">糕点系列</el-menu-item>
         <el-menu-item index="/home/snack">休闲食品</el-menu-item>
         <el-menu-item index="/home/festive">节日食品</el-menu-item>
         <el-menu-item index="/home/bread">面包主食</el-menu-item>
@@ -25,10 +25,12 @@
 
     <!-- main -->
     <div class="fu">
-      <ul class="erzi">
-        <li>散点</li>
-        <li>糕点礼盒</li>
-      </ul>
+      <el-menu
+        :default-active="activeIndex" 
+        class="erzi" background-color="#fcf5e1" active-text-color="#d4b970">
+        <el-menu-item index="1">面包</el-menu-item>
+        <el-menu-item index="2">蛋糕</el-menu-item>
+      </el-menu>
     </div>
     <div class="contain">
       <div class="mbx">
@@ -42,7 +44,7 @@
       </div>
       <div class="tupian">
         <div class="bg">
-          <img src="../../assets/gdxl.jpg" alt="" />
+          <img src="../../assets/105744002a9c4270-4.jpg" alt="" />
         </div>
       </div>
       <div class="xzq">
@@ -69,16 +71,16 @@
       </div>
       <div class="neirong">
         <div class="nei">
-          <div class="gd2-2" v-for="item in 12" :key="item.value">
+          <div class="gd2-2" v-for="item in 4" :key="item.value">
             <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
+              <img src="../../assets/1643347104a4913a3-5_cut380380.jpg" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+                <a href="#">手撕面包棒</a>
               </h1>
               <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
+                >色泽金黄，麦香扑鼻而来。</span
               >
               <a href="#" class="d1">请进</a>
             </div>
@@ -86,12 +88,6 @@
               <img src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
-        </div>
-      </div>
-      <div class="fenye">
-        <div class="page">
-          <el-pagination background layout="prev, pager, next" :total="20">
-        </el-pagination>
         </div>
       </div>
     </div>
@@ -102,6 +98,7 @@
 export default {
   data() {
     return {
+      activeIndex:'1',
       options: [
         {
           value: "选项1",
@@ -180,6 +177,8 @@ export default {
   width: 100%;
   background: #fcf5e1;
   border-bottom: 1px solid #d9ae6e;
+  overflow: hidden;
+
 }
 .erzi {
   width: 1200px;
@@ -260,12 +259,18 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
+.nei :nth-child(3){
+  margin-right: 0;
+}
 .gd2-2 {
   width: 380px;
   height: 380px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
 }
 
 .pic {
@@ -279,9 +284,11 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   padding: 0 20px;
   color: #fff;
-  width: 354px;
+  width: 380px;
   height: 158px;
   bottom: 0;
+  box-sizing: border-box;
+
 }
 
 .txt h1 {
@@ -322,18 +329,5 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-}
-.fenye {
-  width: 1200px;
-  display: flex;
-}
-.page {
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #071727;
-    color: #FFF;
 }
 </style>

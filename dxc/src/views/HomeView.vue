@@ -49,12 +49,12 @@
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li  @click="$router.push('/home/eat')">
                     <img src="../assets/3.png" alt="">
                     <span>产品</span>
                     <div class="nav-center-yc">
                         <ul>
-                            <li class="one">糕点系列</li>
+                            <li class="one"  @click="$router.push('/home/pastry')">糕点系列</li>
                             <li>休闲食品</li>
                             <li>节日食品</li>
                             <li>面包主食</li>
