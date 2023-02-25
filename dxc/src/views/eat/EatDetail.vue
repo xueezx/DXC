@@ -94,15 +94,17 @@
           </div>
           <div class="xiaozi">
             <div class="left">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+              <p class="title">品名：开心果</p>
+              <p class="title">规格：100g</p>
+              <p class="title">主料：</p><span class="chengfen">
+                <p>开心果</p>
+              </span>
+              <p class="title">口感：入口醇香、清香酥脆</p>
+              <p class="title">适应人群：</p>
+              <p class="title">储存条件：请放置于干燥阴凉处</p>
             </div>
             <div class="right">
-              <p></p>
+              <p>精选优质果实，传统工艺制作，拒绝过度加工和添加，还原果实原香。开心果果实疙瘩饱满，无漂白，入口醇香，清香酥脆。</p>
             </div>
           </div>
         </div>
@@ -255,5 +257,55 @@ export default {
     margin-bottom: 30px;
     margin-left: 66px;
   }
+}
+.xiaozi{
+  width: 100%;
+  display: block;
+  display: flex;
+  .left{
+    width: 544px;
+    margin-left: 60px;
+    font-size: 14px;
+    color: #996600;
+    display: flex;
+    display: block;
+position: relative;
+border-right: 1px solid #e3d19e;
+
+    .title{
+      width: 544px;
+      display: flex;
+      float: left;
+        line-height: 35px;
+        font-size: 16px;
+      p{
+        width: 544px;
+      }
+    }
+    .chengfen{
+        display: block;
+        p{
+          display: block;
+          width: 94px;
+        line-height: 87px;
+        background: #ceaf59;
+        color: #fff;
+        position: absolute;
+        text-align: center;
+        align-items: center;
+        left:75px;
+        top: 75px;
+        }
+      }
+  }
+  .left :nth-child(3){
+  padding-bottom: 70px;
+}
+.right{
+  width: 590px;
+  color: #733912;
+  font-size: 14px;
+  padding: 35px;
+}
 }
 </style>
