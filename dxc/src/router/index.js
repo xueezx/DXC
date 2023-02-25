@@ -14,52 +14,91 @@ const routes = [
     name: 'home',
     component: HomeView,
     children: [
+      //news
       {
-        path: 'index',
-        component: () => import('../views/index/Index.vue')
+        path: 'new',
+        component: () => import('../views/New.vue'),
+        children: [
+          {
+            path: 'jtnew',
+            component: () => import('../views/new/JtNew.vue'),
+            children: [
+              {
+                path: 'jt/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              }
+
+            ]
+          },
+          {
+            path: 'dfnew',
+            component: () => import('../views/new/DfNew.vue'),
+            children: [
+              {
+                path: 'df/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              },
+            ]
+          },
+          {
+            path: 'mtnew',
+            component: () => import('../views/new/MtNew.vue'),
+            children: [
+              {
+                path: 'mt/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              }
+            ]
+          },
+        ]
       },
       {
+        //产品
         path: 'eat',
         component: () => import('../views/eat/Eat.vue'),
         meta: {
           thumb: ['首页', '产品']
         }
       },
+      // {
+      //   path: 'eat-home',
+      //   redirect: '/home/eat-home/pastry',
+      // },
+
+      //首页
       {
-        path: 'bread',
-        component: () => import('../views/eat/Bread.vue')
+        path: 'index',
+        // redirect:'/home/index',
+        component: () => import('../views/index/Index.vue')
       },
+      //品牌
       {
-        path: 'nut',
-        component: () => import('../views/eat/Nut.vue')
-      },
-      {
-        path: 'eat-detail',
-        component: () => import('../views/eat/EatDetail.vue'),
-      },
-      {
-        path: 'snack',
-        component: () => import('../views/eat/Snack.vue')
-      },
-      {
-        path: 'festive',
-        component: () => import('../views/eat/Festive.vue'),
-      },
-      {
-        path: 'frozen',
-        component: () => import('../views/eat/Frozen.vue')
-      },
-      {
-        path: 'pastry',
-        component: () => import('../views/eat/Pastry.vue')
+        path: 'pp',
+        component: () => import('../views/pp/pp.vue'),
+        meta: {
+          thumb: ['首页', '品牌']
+        },
+        children: [
+          {
+            path: 'ppls',
+            component: () => import('../views/pp/ppls.vue'),
+            meta: {
+              thumb: ['首页', '品牌', '品牌历史']
+            }
+          },
+        ]
+
       },
 
+      //我们
+
+      // {
+      //   path: 'me',
+      //   redirect:'/home/me/introduction'
+      // },
       {
         path: 'me',
-        redirect: '/home/me/introduction'
-      },
-      {
-        path: 'me',
+        redirect: 'me/introduction',
         component: () => import('../views/Me/Me.vue'),
         children: [
           {
@@ -134,6 +173,7 @@ const routes = [
 
 
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
