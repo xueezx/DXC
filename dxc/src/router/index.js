@@ -27,46 +27,76 @@ const routes = [
       //   redirect: '/home/eat-home/pastry',
       // },
       {
-        path: 'eat-home',
-        component: () => import('../views/eat/EatHome.vue'),
+        path: 'nut',
+        component: () => import('../views/eat/Nut.vue')
+      },
+      {
+        path: 'eat-detail',
+        component: () => import('../views/eat/EatDetail.vue'),
+      },
+      {
+        path: 'snack',
+        component: () => import('../views/eat/Snack.vue')
+      },
+      {
+        path: 'festive',
+        component: () => import('../views/eat/Festive.vue'),
+      },
+      {
+        path: 'frozen',
+        component: () => import('../views/eat/Frozen.vue')
+      },
+      {
+        path: 'pastry',
+        component: () => import('../views/eat/Pastry.vue')
+      },
+
+      {
+        path: 'me',
+        redirect: '/home/me/introduction'
+      },
+      {
+        path: 'me',
+        component: () => import('../views/Me/Me.vue'),
         children: [
           {
-            path: 'pastry',
-            component: () => import('../views/eat/Pastry.vue'),
+            path: 'introduction',
+            component: () => import('../views/Me/Introduction.vue'),
             meta: {
-              thumb: ['首页', '产品', '糕点系列', '散点']
-            }
-          }, {
-            path: 'nut',
-            component: () => import('../views/eat/Nut.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
+              thumb: ['首页', '我们', '企业介绍']
             }
           },
           {
-            path: 'bread',
-            component: () => import('../views/eat/Bread.vue'),
+            path: 'service',
+            component: () => import('../views/Me/Service.vue'),
             meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
+              thumb: ['首页', '我们', '服务理念']
             }
           },
           {
-            path: 'festive',
-            component: () => import('../views/eat/Festive.vue'),
+            path: 'strategy',
+            component: () => import('../views/Me/Strategy.vue'),
             meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
+              thumb: ['首页', '我们', '国际战略']
             }
           },
           {
-            path: 'frozen',
-            component: () => import('../views/eat/Frozen.vue'),
+            path: 'branch',
+            component: () => import('../views/Me/Branch.vue'),
             meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
+              thumb: ['首页', '我们', '分支机构']
             }
           },
           {
-            path: 'snack',
-            component: () => import('../views/eat/Snack.vue'),
+            path: 'foodsafety',
+            component: () => import('../views/Me/FoodSafety.vue'),
+            meta: {
+              thumb: ['首页', '我们', '食品安全']
+            }
+          },
+          {
+            path: 'social',
+            component: () => import('../views/Me/Social.vue'),
             meta: {
               thumb: ['首页', '产品', '坚果系列', '散点']
             }

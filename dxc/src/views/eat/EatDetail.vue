@@ -24,15 +24,6 @@
     </div>
 
     <!-- main -->
-    <div class="fu">
-      <el-menu
-        :default-active="activeIndex" 
-        class="erzi" background-color="#fcf5e1" active-text-color="#d4b970">
-        <el-menu-item index="1">中秋月饼</el-menu-item>
-        <el-menu-item index="2">端午粽子</el-menu-item>
-        <el-menu-item index="3">年品贺礼</el-menu-item>
-      </el-menu>
-    </div>
     <div class="contain">
       <div class="mbx">
         <!-- 面包屑导航 -->
@@ -42,11 +33,6 @@
             item
           }}</el-breadcrumb-item>
         </el-breadcrumb>
-      </div>
-      <div class="tupian">
-        <div class="bg">
-          <img src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
-        </div>
       </div>
       <div class="xzq">
         <el-select class="sel" v-model="value" placeholder="请选择">
@@ -72,29 +58,53 @@
       </div>
       <div class="neirong">
         <div class="nei">
-          <div class="gd2-2" v-for="item in 12" :key="item.value">
-            <div class="pic">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+          <el-carousel trigger="click" height="662px">
+            <el-carousel-item>
+              <img
+                src="../../assets/eat/95040289d67189f2-4_cut1200662.jpg"
+                alt=""
+              />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img
+                src="../../assets/eat/9503358484d5ca8a-4_cut1200662.jpg"
+                alt=""
+              /> </el-carousel-item
+            ><el-carousel-item>
+              <img
+                src="../../assets/eat/95037701530c9493-3_cut1200662.jpg"
+                alt=""
+              /> </el-carousel-item
+            ><el-carousel-item>
+              <img
+                src="../../assets/eat/950308372457653a-1_cut1200662.jpg"
+                alt=""
+              /> </el-carousel-item
+            ><el-carousel-item>
+              <img
+                src="../../assets/eat/9504354436994712-5_cut1200662.jpg"
+                alt=""
+              />
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div class="wenben">
+          <div class="dazi">
+            <h3>枣花酥</h3>
+          </div>
+          <div class="xiaozi">
+            <div class="left">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
-            <div class="txt">
-              <h1>
-                <a href="#">苏式月饼</a>
-              </h1>
-              <span
-                >非遗技艺，百年传承。</span
-              >
-              <a href="#" class="d1">请进</a>
-            </div>
-            <div class="logo">
-              <img src="../../assets/logo.jpg" alt="" />
+            <div class="right">
+              <p></p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="fenye">
-        <div class="page">
-          <el-pagination background layout="prev, pager, next" :total="20">
-        </el-pagination>
         </div>
       </div>
     </div>
@@ -105,7 +115,6 @@
 export default {
   data() {
     return {
-      activeIndex:'1',
       options: [
         {
           value: "选项1",
@@ -145,6 +154,7 @@ export default {
   padding: 0;
   width: 100%;
   background: #fcfaf4;
+  box-sizing: border-box;
   display: block;
 }
 .banner {
@@ -180,29 +190,6 @@ export default {
   width: 1200px;
   margin: 0 auto;
 }
-.fu {
-  width: 100%;
-  background: #fcf5e1;
-  border-bottom: 1px solid #d9ae6e;
-  overflow: hidden;
-
-}
-.erzi {
-  width: 1200px;
-  height: 52px;
-  margin: 0 auto;
-  display: block;
-  display: flex;
-
-  li {
-    width: 192px;
-    font-size: 16px;
-    color: #333333;
-    line-height: 52px;
-    text-align: center;
-    align-items: center;
-  }
-}
 .bc {
   display: flex;
   align-items: flex-end;
@@ -211,22 +198,7 @@ export default {
 .bc p {
   margin-right: 10px;
 }
-.tupian {
-  width: 1200px;
-  height: 173px;
 
-  .bg {
-    width: 100%;
-    height: 125px;
-    background: url(../../assets/bg1.png) no-repeat center top;
-    background-size: cover;
-    img {
-      margin: 0 auto;
-      padding-top: 47px;
-      display: block;
-    }
-  }
-}
 .xzq {
   width: 100%;
   display: flex;
@@ -255,99 +227,33 @@ export default {
   border-radius: 5px;
   align-items: center;
 }
-.neirong {
-  margin-top: 30px;
-  margin-bottom: 50px;
-  width: 100%;
-}
-.nei {
-  width: 100%;
-  justify-content: start;
-  display: flex;
-  flex-wrap: wrap;
-}
-.nei :nth-child(3n){
-  margin-right: 0;
-}
-.gd2-2 {
-  width: 380px;
-  height: 380px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  box-sizing: border-box;
 
-}
-
-.pic {
-  img {
-    width: 380px;
-  }
-}
-
-.txt {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0 20px;
-  color: #fff;
-  width: 380px;
-  height: 158px;
-  bottom: 0;
-  box-sizing: border-box;
-}
-
-.txt h1 {
-  font-size: 24px;
-
-  a {
-    color: #fff;
-  }
-}
-
-.txt span {
-  font-size: 12px;
-  line-height: 20px;
-  display: block;
-  padding: 0 20px 0 0;
-}
-
-.d1 {
-  display: block;
-  width: 44px;
-  background-color: #bfa764;
-  border-radius: 50%;
-  text-align: center;
-  align-items: center;
-  line-height: 44px;
-  font-size: 18px;
-  float: right;
-  margin: 20px 40px 20px 0;
-  border: 1px none;
-  color: #fff;
-}
-
-.d1:hover {
-  background-color: red;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.fenye {
+.el-carousel__item img {
+  opacity: 0.75;
+  margin: 0;
   width: 1200px;
-  display: flex;
+  line-height: 662px;
 }
-.page {
-  margin: 0 auto;
-  margin-bottom: 30px;
+.neirong {
+  width: 100%;
+  border: 1px none;
 }
+.wenben {
+  width: 100%;
+  height: 420px;
+  border: 1px solid #d9ae6e;
+  margin-bottom: 60px;
+  background: #f9f4e4;
+}
+.dazi {
+  width: 100%;
 
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #071727;
-    color: #FFF;
+  h3 {
+    color: #996600;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 66px;
+  }
 }
 </style>
