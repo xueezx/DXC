@@ -21,62 +21,42 @@ const routes = [
           thumb: ['首页', '产品']
         }
       },
-      {
-        path: 'eat-home',
-        redirect: '/home/eat-home/pastry',
-      },
-      {
-        path: 'eat-home',
-        component: () => import('../views/eat/EatHome.vue'),
-        children: [
-          {
-            path: 'pastry',
-            component: () => import('../views/eat/Pastry.vue'),
-            meta: {
-              thumb: ['首页', '产品', '糕点系列', '散点']
-            }
-          }, {
-            path: 'nut',
-            component: () => import('../views/eat/Nut.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'bread',
-            component: () => import('../views/eat/Bread.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'festive',
-            component: () => import('../views/eat/Festive.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'frozen',
-            component: () => import('../views/eat/Frozen.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'snack',
-            component: () => import('../views/eat/Snack.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-
-        ]
-      },
+      // {
+      //   path: 'eat-home',
+      //   redirect: '/home/eat-home/pastry',
+      // },
 
       {
         path: 'index',
         component: () => import('../views/index/Index.vue')
+      },
+      {
+        path: 'bread',
+        component: () => import('../views/eat/Bread.vue')
+      },
+      {
+        path: 'nut',
+        component: () => import('../views/eat/Nut.vue')
+      },
+      {
+        path: 'eat-home',
+        component: () => import('../views/eat/EatHome.vue'),
+      },
+      {
+        path: 'snack',
+        component: () => import('../views/eat/Snack.vue')
+      },
+      {
+        path: 'festive',
+        component: () => import('../views/eat/Festive.vue'),
+      },
+      {
+        path: 'frozen',
+        component: () => import('../views/eat/Frozen.vue')
+      },
+      {
+        path: 'pastry',
+        component: () => import('../views/eat/Pastry.vue')
       },
 
       {
