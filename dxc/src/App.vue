@@ -17,4 +17,8 @@ a{
 ul,li{
   list-style: none;
 }
+.contain,.content{
+  width: 1200px;
+  margin: auto;
+}
 </style>

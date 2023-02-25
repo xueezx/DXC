@@ -6,10 +6,10 @@
             <img src="../assets/1.png" alt="">
         </div>
         <div class="nav-center">
-            <ul>
-                <li>
+            <ul>               
+                <li @click="$router.push('/home/me/introduction')">
                     <img src="../assets/7.png" alt="">
-                    <span @click="$router.push('/home/me')">我们</span>
+                    <span >我们</span>
                     <div class="nav-center-yc">
                         <ul>
                             <li class="one">企业介绍</li>
@@ -20,7 +20,7 @@
                             <li>社会责任</li>
                         </ul>
                     </div>
-                </li>
+                </li>           
                 <li>
                     <img src="../assets/6.png" alt="">
                     <span>新闻</span>
@@ -32,24 +32,24 @@
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li @click="$router.push('/home/index')">
                     <div class="dxc">
                         <img src="../assets/2.png" alt="">
                     </div>
                 </li>
-                <li>
+                <li @click="$router.push('/home/pp/ppls')">
                     <img src="../assets/4.png" alt="">
                     <span>品牌</span>
                     <div class="nav-center-yc">
                         <ul>
-                            <li class="one">品牌历史</li>
+                            <li class="one" >品牌历史</li>
                             <li>品牌荣誉</li>
                             <li>传承人</li>
                             <li>文化活动</li>
                         </ul>
                     </div>
                 </li>
-                <li>
+                <li @click="$router.push('/home/eat')">
                     <img src="../assets/3.png" alt="">
                     <span>产品</span>
                     <div class="nav-center-yc">
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <!-- 二级路由占位符 -->
+    <!-- 三级路由占位符 -->
     <router-view/>
     
     <!-- 页脚导航栏 -->
@@ -146,6 +146,7 @@
 </template>
 
 <script>
+
 
 </script>
 <style scoped lang="scss">

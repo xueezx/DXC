@@ -2,7 +2,7 @@
     <div>
         <!-- 视频 -->
         <div class="shipin">
-            <video controls poster src="@/assets/video/shipin.mp4"></video>
+            <video autoplay controls poster src="@/assets/video/shipin.mp4"></video>
         </div>
         <!-- 版心 -->
         <div class="contain">
@@ -349,6 +349,7 @@ div {
                                 border-bottom: 1px solid #e4d4a9;
                                 padding-bottom: 10px;
                                 margin-bottom: 10px;
+                                width: 86%;
                             }
 
                             >span {
