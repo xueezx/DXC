@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h3>企业介绍</h3>
-
     <div class="bj1"></div>
 
     <p>
@@ -134,12 +132,12 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <img src="../../assets/me/qyjs08.jpg" alt="">
+          <img src="../../assets/me/qyjs08.jpg" class="img">
         </div>
       </el-col>
       <el-col :span="16">
         <div class="grid-content bg-purple">
-          <img src="../../assets/me/qyjs09.jpg" alt="">
+          <img src="../../assets/me/qyjs09.jpg" class="img">
         </div>
       </el-col>
     </el-row>
@@ -147,17 +145,17 @@
     <el-row :gutter="20">
       <el-col :span="16">
         <div class="grid-content bg-purple">
-          <img src="../../assets/me/qyjs10.jpg" alt="">
+          <img src="../../assets/me/qyjs10.jpg" class="img">
         </div>
       </el-col>
       <el-col :span="8">
         <div class="grid-content bg-purple">
-          <img src="../../assets/me/qyjs11.jpg" alt="">
+          <img src="../../assets/me/qyjs11.jpg" class="img">
         </div>
       </el-col>
     </el-row>
 
-    <!-- 现代科技 -->
+    <!-- f4  科技创新 -->
     <div class="two">
       <img src="../../assets/me/kjcx-wz.jpg" class="font" />
     </div>
@@ -171,7 +169,7 @@
       打造并提升“稻香村”精品品牌形象，引领行业技术跨越式发展。
     </p>
 
-    <!-- 食品安全 -->
+    <!-- f5  食品安全 -->
     <div class="two">
       <img src="../../assets/me/spaq-wz.jpg" class="font" />
     </div>
@@ -218,28 +216,27 @@
         <div class="grid-content">
           <div class="wz spaq">
             <p class="title">
-              2
+              1
             </p>
             <p class="desc">
-              车间设有108个摄像监控，16处IC自动门禁，8道隔离门
+              10万级净化车间、全空调GMP模范车间
             </p>
           </div>
         </div>
       </el-col>
       <el-col :span="6">
-        <img src="../../assets/me/qyjs13.jpg" alt="">
         <div class="grid-content">
-
+          <img src="../../assets/me/qyjs13.jpg" alt="">
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content">
           <div class="wz spaq">
             <p class="title">
-              4
+              3
             </p>
             <p class="desc">
-              生产员工到岗需经过7次检查、除尘消毒、通过8道隔离门
+              生产工序自检互检、品控产品专检、生产卫生检查组巡检
             </p>
           </div>
         </div>
@@ -250,6 +247,86 @@
         </div>
       </el-col>
     </el-row>
+
+    <!-- f6  工匠精神 -->
+    <div class="two">
+      <img src="../../assets/me/gjjs-wz.jpg" class="font" />
+    </div>
+
+    <div class="gjjs">
+      <div class="left">
+        <div class="top">
+          <img src="../../assets/me/qyjs16.jpg" alt="">
+        </div>
+        <div class="bottom">
+          <p>稻香村集团在产品上坚持“工匠精神”，“稻香村”传统手工技艺都是通过“师傅带徒弟”的方式代代相传。
+            从创始至今，稻香村集团有着清晰的技艺传承谱系，至今已传承六代。
+          </p>
+          <p>
+            技艺传承全凭口传心授，工艺复杂，手工技艺性强，质量要求严格，形状要求美观，却不使用模具，
+            如稻香村苏式月饼酥皮层薄如纸，可多达16层，特别关键工艺需要长期实践积累丰富经验。
+            因此学艺时间长，一般需要近二十年才能完整地掌握全部工艺过程。
+            2009年稻香村苏式月饼制作技艺被收录至省级非物质文化遗产名录。
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <img src="../../assets/me/qyjs18.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- f7  走向世界 -->
+    <div class="two">
+      <img src="../../assets/me/zxsj-wz.jpg" class="font" />
+    </div>
+
+    <div class="zxsj">
+      <div class="top">
+        <img src="../../assets/me/qyjs02.jpg" alt="">
+        <p>稻香村集团为了响应国家“一带一路”和“中国企业走出去”的倡议，实施“稻香村出海”战略，
+          在海外60多个国家和地区注册“稻香村”的商标。截止目前，通过跨境门店等渠道将产品出口到海外40多个国家和地区，
+          让海外的游子品尝到家乡的味道，让国际友人领略到稻香村美食背后的中国文化。
+        </p>
+      </div>
+      <div class="bottom">
+        <img src="../../assets/me/qyjs19.jpg" alt="">
+        <img src="../../assets/me/qyjs20.jpg" alt="">
+        <img src="../../assets/me/qyjs21.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- f8  中国梦 -->
+    <div class="two">
+      <img src="../../assets/me/zgm-wz.jpg" class="font" />
+    </div>
+
+    <ul class="zgm">
+      <li>
+        <img src="../../assets/me/qyjs22.png" alt="">
+        <p>始于1773年【乾隆三十八年】</p>
+      </li>
+      <li>
+        <img src="../../assets/me/qyjs23.png" alt="">
+        <p>国家首批认定的【中华老字号】</p>
+      </li>
+      <li>
+        <img src="../../assets/me/qyjs24.png" alt="">
+        <p>稻香村苏式月饼制作技艺【江苏省级非物质文化遗产】</p>
+      </li>
+      <li>
+        <img src="../../assets/me/qyjs25.png" alt="">
+        <p>全国拥有专营专卖店【800多家】</p>
+      </li>
+    </ul>
+
+    <p class="zgmwz">稻香村集团，不只是继承与创新，更有不断的自我蜕变。
+      正因为我们勇于舍弃旧的不合时宜，才能够维持两百年不坠的品牌价值。
+      稻香村集团作为底蕴深厚的“中国文化符号“，不仅追求生产技艺上的登峰造极，
+      更热衷于对客户始终不变的深厚情感，秉承“厚道做人、地道做事、成人达己、追求卓越”的经营理念，
+      坚守社会责任，立足国内继续夯实连锁经营、持续发力互联网电子商务并积极拓展海外市场，
+      未来，将把更多中式糕点带到世界各地，让源自苏州的稻香村香飘世界，让中国糕点享誉世界，
+      让中华美食在世界的舞台起舞、光荣绽放、回味无穷！
+    </p>
 
 
 
@@ -291,13 +368,13 @@ export default {};
   display: flex;
   margin-bottom: 40px;
   .left {
-    width: 700px;
+    width: 720px;
     height: 600px;
     position: relative;
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      // object-fit: cover;
     }
     .wz {
       display: flex;
@@ -317,13 +394,13 @@ export default {};
     }
   }
   .right {
-    width: 500px;
+    width: 480px;
     ul {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       li {
-        width: 250px;
+        width: 240px;
         height: 200px;
         position: relative;
         img {
@@ -394,10 +471,111 @@ export default {};
 .grid-content {
   border-radius: 4px;
   overflow: hidden;
-  img{
+  .img{
     width: 100%;
+    height: 336px;
     object-fit: cover;
   }
+}
+
+//食品安全
+.spaq{
+  background-color: #f8f4e3;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title{
+    font-size: 90px;
+    color: #ceaf59;
+    margin-top: 40px;
+  }
+  .desc{
+    width: 270px;
+    font-size: 18px;
+    color: #ceaf59;
+    text-align: center;
+  }
+}
+
+//工匠精神
+.gjjs{
+  display: flex;
+  height: 620px;
+  background-color: #c9b053;
+  .left{
+    width: 600px;
+    .top{
+      img{
+        width: 600px;
+      }
+    }
+    .bottom{
+      padding: 40px;
+      p{
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+  }
+  .right{
+    width: 600px;
+    img{
+      width: 600px;
+      height: 600px;
+
+    }
+  }
+}
+
+//走向世界
+.zxsj{
+  .top{
+    width: 1200px;
+    height: 400px;
+    display: flex;
+    img{
+      width: 600px;
+      object-fit: cover;
+    }
+    p{
+      width: 600px;
+      background-color: #b6a991;
+      font-size: 20px;
+      color: #fff;
+      padding: 100px;
+    }
+  }
+  .bottom{
+    width: 100%;
+    height: 300px;
+  }
+}
+
+//中国梦
+.zgm{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  li{
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+      width: 155px;
+      height: 155px;
+      margin-bottom: 30px;
+    }
+    p{
+      font-size: 14px;
+      color: #664f10;
+    }
+  }
+}
+
+.zgmwz{
+  padding-bottom: 80px;
 }
 
 

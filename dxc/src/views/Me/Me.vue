@@ -30,7 +30,7 @@
     <div class="contain">
       <!-- 面包屑导航 -->
       <el-breadcrumb class="bc" separator-class="el-icon-arrow-right">
-        <p>您现在的位置:</p>
+        <p>您现在的位置 :</p>
         <el-breadcrumb-item v-for="item in $route.meta.thumb" :key="item">{{
           item
         }}</el-breadcrumb-item>
@@ -84,8 +84,8 @@ img{
     display: flex;
     align-items: flex-end;
     margin: 30px 0px;
-    .bc p {
-      margin-right: 10px;
+    p {
+      margin-right: 15px;
     }
   }
 }

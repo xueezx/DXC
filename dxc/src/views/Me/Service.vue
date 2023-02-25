@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>服务理念</h3>
     <div class="two">
       <img src="../../assets/me/fwln.jpg" class="font">
     </div>

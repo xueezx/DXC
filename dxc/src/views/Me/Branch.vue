@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h3>分支机构</h3>
-
     <!-- 大型现代化加工厂 -->
     <div class="two">
       <img src="../../assets/me/jgc.jpg" class="font">
@@ -20,77 +18,18 @@
       <img src="../../assets/me/fgs.jpg" class="font2">
     </div>
 
-    <el-row>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-    </el-row>
-
-    <el-row>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="bg">
-          <el-descriptions title="苏州稻香村食品有限公司" column="1" class="fgs">
-            <el-descriptions-item label="地址">苏州工业园区唯亭镇唯文路19 号</el-descriptions-item>
-            <el-descriptions-item label="邮编">18100000000</el-descriptions-item>
-            <el-descriptions-item label="电话">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="传真">0512-87182818</el-descriptions-item>
-            <el-descriptions-item label="网址">www.daoxiangcun.cn</el-descriptions-item>
-          </el-descriptions>
-        </div>
-      </el-col>
-    </el-row>
+    <ul class="fgs">
+      <li>
+          <div>
+            <p class="name">苏州稻香村食品有限公司</p>
+            <p class="xx">地址:  苏州工业园区唯亭镇唯文路19 号</p>
+            <p class="xx">邮编:  18100000000</p>
+            <p class="xx">电话:  0512-87182818</p>
+            <p class="xx">传真:  0512-87182818</p>
+            <p class="xx">网址:  www.daoxiangcun.cn</p>
+          </div>
+      </li>
+    </ul>
 
 
 
@@ -146,17 +85,31 @@
     background-color: #d3dce6;
 }
 
-//九宫格
-.bg {
-  background: #fff;
+//分公司
+.fgs{
+  display: flex;
+  padding-bottom: 80px;
+  li{
+    width: calc(100% / 3);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #c9b053;
+    div{
+      .name{
+        font-size: 24px;
+        color: #b78439;
+        margin-bottom: 20px;
+      }
+      .xx{
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
-//描述列表
-.fgs{
-  border: 2px solid #c9b053;
-  margin: 1px;
-  padding: 10px 20px;
-}
+
 
 
 

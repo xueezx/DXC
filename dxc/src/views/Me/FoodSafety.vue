@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h3>食品安全</h3>
-
     <div class="two">
       <img src="../../assets/me/spaq-wz.jpg" class="font" />
     </div>
@@ -98,10 +96,11 @@ export default {};
 //制作流程
 .step{
   width: 70%;
-  margin: 40px auto;
+  margin: 0 auto;
   display: flex;
   border-radius: 6px;
   overflow: hidden;
+  padding-bottom: 80px;
 
   img{
     width: 50%;

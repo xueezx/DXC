@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h3>社会责任</h3>
-
+    <!-- 社会责任 -->
     <div class="two">
       <img src="../../assets/me/shzr-wz.jpg" class="font" />
     </div>
@@ -28,7 +27,7 @@
       </div>
     </div>
 
-    <div class="news">
+    <div class="news last">
       <img src="../../assets/me/new2.0.jpg" >
       <div class="right">
         <a>
@@ -90,7 +89,7 @@
     a{
       font-size: 18px;
       color: #b78439;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       display: block;
     }
     .date{
@@ -102,16 +101,17 @@
       color: #333;
     }
     .enter{
-      // position: relative;
-      // bottom: 10px;
-      // right: 20px;
-      margin-top: 20px;
-
+      margin-top: 10px;
+      margin-left: 800px;
 
     }
   }
 }
 
+.last{
+  padding-bottom: 80px;
+  margin-bottom: 0;
+}
 
 
 </style>
