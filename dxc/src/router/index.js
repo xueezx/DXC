@@ -14,6 +14,44 @@ const routes = [
     name: 'home',
     component: HomeView,
     children: [
+      //news
+      {
+        path: 'new',
+        component: () => import('../views/New.vue'),
+        children: [
+          {
+            path: 'jtnew',
+            component: () => import('../views/new/JtNew.vue'),
+            children: [
+              {
+                path: 'jt/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              }
+
+            ]
+          },
+          {
+            path: 'dfnew',
+            component: () => import('../views/new/DfNew.vue'),
+            children: [
+              {
+                path: 'df/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              },
+            ]
+          },
+          {
+            path: 'mtnew',
+            component: () => import('../views/new/MtNew.vue'),
+            children: [
+              {
+                path: 'mt/:id',
+                component: () => import('../views/new/DetailNew.vue')
+              }
+            ]
+          },
+        ]
+      },
       {
         //产品
         path: 'eat',
