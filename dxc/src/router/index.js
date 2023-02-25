@@ -64,54 +64,6 @@ const routes = [
       //   path: 'eat-home',
       //   redirect: '/home/eat-home/pastry',
       // },
-      {
-        path: 'eat-home',
-        component: () => import('../views/eat/EatHome.vue'),
-        children: [
-          {
-            path: 'pastry',
-            component: () => import('../views/eat/Pastry.vue'),
-            meta: {
-              thumb: ['首页', '产品', '糕点系列', '散点']
-            }
-          }, {
-            path: 'nut',
-            component: () => import('../views/eat/Nut.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'bread',
-            component: () => import('../views/eat/Bread.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'festive',
-            component: () => import('../views/eat/Festive.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'frozen',
-            component: () => import('../views/eat/Frozen.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-          {
-            path: 'snack',
-            component: () => import('../views/eat/Snack.vue'),
-            meta: {
-              thumb: ['首页', '产品', '坚果系列', '散点']
-            }
-          },
-
-        ]
-      },
 
       //首页
       {
@@ -130,8 +82,8 @@ const routes = [
           {
             path: 'ppls',
             component: () => import('../views/pp/ppls.vue'),
-            meta:{
-              thumb:['首页','品牌','品牌历史']
+            meta: {
+              thumb: ['首页', '品牌', '品牌历史']
             }
           },
         ]
