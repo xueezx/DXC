@@ -60,10 +60,34 @@ const routes = [
           thumb: ['首页', '产品']
         }
       },
-      // {
-      //   path: 'eat-home',
-      //   redirect: '/home/eat-home/pastry',
-      // },
+      {
+        path: 'bread',
+        component: () => import('../views/eat/Bread.vue')
+      },
+      {
+        path: 'nut',
+        component: () => import('../views/eat/Nut.vue')
+      },
+      {
+        path: 'eat-detail',
+        component: () => import('../views/eat/EatDetail.vue'),
+      },
+      {
+        path: 'snack',
+        component: () => import('../views/eat/Snack.vue')
+      },
+      {
+        path: 'festive',
+        component: () => import('../views/eat/Festive.vue'),
+      },
+      {
+        path: 'frozen',
+        component: () => import('../views/eat/Frozen.vue')
+      },
+      {
+        path: 'pastry',
+        component: () => import('../views/eat/Pastry.vue')
+      },
 
       //首页
       {

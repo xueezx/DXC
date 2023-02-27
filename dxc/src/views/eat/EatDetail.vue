@@ -97,7 +97,7 @@
               <p class="title">品名：开心果</p>
               <p class="title">规格：100g</p>
               <p class="title">主料：</p><span class="chengfen">
-                <p>开心果</p>
+                <p>开心果</p><p>开心果</p>
               </span>
               <p class="title">口感：入口醇香、清香酥脆</p>
               <p class="title">适应人群：</p>
@@ -206,6 +206,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   color: #664f10;
+  margin-bottom: 20px;
 }
 .sel {
   width: 346.38px;
@@ -284,17 +285,19 @@ border-right: 1px solid #e3d19e;
     }
     .chengfen{
         display: block;
+        position: absolute;
+left:75px;
+        top: 75px;
+        display: flex;
         p{
           display: block;
           width: 94px;
         line-height: 87px;
         background: #ceaf59;
         color: #fff;
-        position: absolute;
         text-align: center;
         align-items: center;
-        left:75px;
-        top: 75px;
+        margin-right: 5px;
         }
       }
   }
