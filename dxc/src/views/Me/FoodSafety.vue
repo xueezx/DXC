@@ -16,6 +16,18 @@
         <div class="kuang"><p>10万</p></div>
         <p>10万级无菌制药级空气净化、全空调GMP模范车间</p>
       </li>
+      <li>
+        <div class="kuang"><p>7+8</p></div>
+        <p>生产员工岗位要经过7次检查、除尘消毒，要经过8道隔离门</p>
+      </li>
+      <li>
+        <div class="kuang"><p>18+6</p></div>
+        <p>车间设有18个摄像监控，6处IC卡自动门禁，实行中央监控</p>
+      </li>
+      <li>
+        <div class="kuang"><img src="../../assets/me/spaq01.jpg" alt=""></div>
+        <p>生产工序自检互检， 品控部产品专检，生产卫生检查组巡检</p>
+      </li>
     </ul>
 
     <!-- 制作流程 -->
@@ -83,6 +95,10 @@ export default {};
         color: #ceaf59;
         margin: auto;
       }
+      img{
+        width: 150px;
+        margin: auto;
+      }
     }
 
     p{
@@ -127,9 +143,6 @@ export default {};
     }
   }
 }
-
-
-
 
 
 </style>
