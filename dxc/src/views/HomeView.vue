@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li @click="$router.push('/home/new/jtnew')">
                         <img src="../assets/6.png" alt="">
                         <span>新闻</span>
                         <div class="nav-center-yc">
@@ -37,15 +37,15 @@
                             <img src="../assets/2.png" alt="">
                         </div>
                     </li>
-                    <li @click="$router.push('/home/pp/ppls')">
+                    <li @click="$router.push('/home/pp')">
                         <img src="../assets/4.png" alt="">
                         <span>品牌</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li class="one">品牌历史</li>
-                                <li>品牌荣誉</li>
-                                <li>传承人</li>
-                                <li>文化活动</li>
+                                <li class="one" @click="$router.push('/home/pp/ppls')">品牌历史</li>
+                                <li @click="$router.push('/home/pp/jtry')">品牌荣誉</li>
+                                <li @click="$router.push('/home/pp/ccr')">传承人</li>
+                                <li @click="$router.push('/home/pp/whhd')">文化活动</li>
                             </ul>
                         </div>
                     </li>
@@ -407,4 +407,5 @@ img {
 
 ul {
     list-style: none;
-}</style>
+}
+</style>
