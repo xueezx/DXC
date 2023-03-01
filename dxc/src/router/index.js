@@ -96,13 +96,24 @@ const routes = [
         component: () => import('../views/index/Index.vue')
       },
       //品牌
+
+      {
+        path: 'pp',
+        redirect: '/home/pp/items',
+      },
+
       {
         path: 'pp',
         component: () => import('../views/pp/pp.vue'),
-        meta: {
-          thumb: ['首页', '品牌']
-        },
         children: [
+          {
+            path: 'items',
+            component: () => import('../views/pp/Item.vue'),
+            meta: {
+              thumb: ['首页', '品牌']
+            }
+          },
+
           {
             path: 'ppls',
             component: () => import('../views/pp/ppls.vue'),
@@ -110,8 +121,28 @@ const routes = [
               thumb: ['首页', '品牌', '品牌历史']
             }
           },
+          {
+            path: 'jtry',
+            component: () => import('../views/pp/Jtry.vue'),
+            meta: {
+              thumb: ['首页', '品牌', '集团荣誉']
+            }
+          },
+          {
+            path: 'ccr',
+            component: () => import('../views/pp/Ccr.vue'),
+            meta: {
+              thumb: ['首页', '品牌', '传承人']
+            }
+          },
+          {
+            path: 'whhd',
+            component: () => import('../views/pp/Whhd.vue'),
+            meta: {
+              thumb: ['首页', '品牌', '文化活动']
+            }
+          },
         ]
-
       },
 
       //我们
