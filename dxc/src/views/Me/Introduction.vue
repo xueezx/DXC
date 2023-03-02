@@ -12,7 +12,7 @@
 
     <!-- f1  企业发展 -->
     <div class="two">
-      <img src="../../assets/me/qyjtfz.png" class="font" />
+      <img src="../../assets/me/qyjtfz.png" class="font6" />
     </div>
 
     <div class="qyjtfz">
@@ -73,7 +73,7 @@
 
     <!-- f2  互联网 -->
     <div class="two">
-      <img src="../../assets/me/hlw-wz.jpg" class="font" />
+      <img src="../../assets/me/hlw-wz.jpg" class="font10" />
     </div>
 
     <p>
@@ -120,8 +120,8 @@
     </ul>
 
     <!-- f3  现代科技 -->
-    <div class="two">
-      <img src="../../assets/me/xdkj-wz.png" class="font" />
+    <div class="two2">
+      <img src="../../assets/me/xdkj-wz.png" class="font4" />
     </div>
 
     <p>
@@ -156,8 +156,8 @@
     </el-row>
 
     <!-- f4  科技创新 -->
-    <div class="two">
-      <img src="../../assets/me/kjcx-wz.jpg" class="font" />
+    <div class="two2">
+      <img src="../../assets/me/kjcx-wz.jpg" class="font4" />
     </div>
 
     <p>
@@ -170,8 +170,8 @@
     </p>
 
     <!-- f5  食品安全 -->
-    <div class="two">
-      <img src="../../assets/me/spaq-wz.jpg" class="font" />
+    <div class="two2">
+      <img src="../../assets/me/spaq-wz.jpg" class="font4" />
     </div>
 
     <el-row>
@@ -250,7 +250,7 @@
 
     <!-- f6  工匠精神 -->
     <div class="two">
-      <img src="../../assets/me/gjjs-wz.jpg" class="font" />
+      <img src="../../assets/me/gjjs-wz.jpg" class="font8" />
     </div>
 
     <div class="gjjs">
@@ -277,7 +277,7 @@
 
     <!-- f7  走向世界 -->
     <div class="two">
-      <img src="../../assets/me/zxsj-wz.jpg" class="font" />
+      <img src="../../assets/me/zxsj-wz.jpg" class="font8" />
     </div>
 
     <div class="zxsj">
@@ -297,7 +297,7 @@
 
     <!-- f8  中国梦 -->
     <div class="two">
-      <img src="../../assets/me/zgm-wz.jpg" class="font" />
+      <img src="../../assets/me/zgm-wz.jpg" class="font6" />
     </div>
 
     <ul class="zgm">
@@ -356,12 +356,36 @@ export default {};
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
+  margin: 10px 0;
+  .font6 {
+    width: 300px;
+    margin: auto;
+  }
+  .font8 {
+    width: 400px;
+    margin: auto;
+  }
+  .font10 {
+    width: 400px;
+    margin: auto;
+  }
 }
-// 图片居中,父弹性布局,子margin:auto
-.font {
-  width: 300px;
-  margin: auto;
+
+.two2 {
+  width: 100%;
+  height: 173px;
+  background-image: url("../../assets/me/bj1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 20px 0;
+  .font4 {
+    width: 200px;
+    margin: auto;
+  }
+
 }
+
 
 //企业集团发展
 .qyjtfz {
@@ -577,7 +601,6 @@ export default {};
 .zgmwz{
   padding-bottom: 80px;
 }
-
 
 
 </style>

@@ -89,10 +89,12 @@
   }
   .cont{
     margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     img{
       width: 800px;
       object-fit: cover;
-      margin: 0 auto;
     }
     p{
       width: 90%;

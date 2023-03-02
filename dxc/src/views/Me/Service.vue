@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="two">
-      <!-- <img src="../../assets/me/fwln.jpg" class="font"> -->
+      <img src="../../assets/me/fwln.jpg" class="font">
       <p>服务理念</p>
     </div>
     <p>
@@ -28,12 +28,6 @@
   .font{
     width: 200px;
     margin: auto;
-  }
-  p{
-    font-size: 42px;
-    margin: auto;
-    background-image: linear-gradient(90deg,#dc4c00,#491b00);
-    // color: linear-gradient(90deg,#dc4c00,#491b00);
   }
 }
 
