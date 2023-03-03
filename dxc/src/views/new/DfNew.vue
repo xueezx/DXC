@@ -16,18 +16,6 @@
 
         <router-view />
         <div class="hos" v-show="hideOrShow">
-            <div class="jump">
-                <div class="left">
-                    <h4>2022中国品牌价值评价信息发布 稻香村（苏州）品牌价值182.77亿元</h4>
-                    <p>Sept 2022.09.06</p>
-                    <span>9月5日，新华社、中国品牌建设促进会、中国资产评估协会在京共同主办</span>
-                    <span>&nbsp;&nbsp;“2022中国品牌价值评价信息发布”线上活动，会上正式发布了2022年中国品牌价值评价结果。稻香村（苏州）不负众望，最终以904的高品牌强度和182.77亿元的品牌价值强势上榜。</span>
-                    <div class="btn">请进</div>
-                </div>
-                <div class="right">
-                    <img src="../../assets/1_new.jpg" alt="">
-                </div>
-            </div>
             <!-- 分页遍历 -->
             <div @click="detail(item.id)" class="jump2" v-for="item in news" :key="item.id">
                 <div class="left2">
@@ -110,121 +98,123 @@ export default {
     margin: 35px 0;
 }
 
-.jump {
-    display: flex;
-    width: 1200px;
-    margin: 20px auto;
+.hos {
+    .jump2 {
+        display: flex;
+        width: 1200px;
+        margin: 20px auto;
 
-    .left {
-        background-color: #F9F4E4;
-        width: 550px;
-        padding: 20px;
+        .right2 {
+            background-color: #F9F4E4;
+            width: 57%;
+            padding: 20px;
 
-        >h4 {
-            color: #C28F39;
-            font-size: 16px;
-            font-weight: lighter;
+            >h4 {
+                color: #C28F39;
+                font-size: 16px;
+                font-weight: lighter;
 
-            &:hover {
-                color: rgb(231, 77, 77);
+                &:hover {
+                    color: rgb(231, 77, 77);
+                }
+            }
+
+            >span {
+                display: inline-block;
+            }
+
+            >p {
+                margin: 10px 0;
+                color: #C28F39;
+                font-size: 12px;
+            }
+
+            .btn {
+                margin: 20px 0 0 600px;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                line-height: 45px;
+                background-color: #BFA764;
+                width: 45px;
+                height: 45px;
+                border-radius: 100%;
+
+
+                &:hover {
+                    color: rgb(231, 77, 77);
+                }
             }
         }
 
-        >span {
-            display: inline-block;
-        }
+        .left2 {
+            width: 43%;
+            overflow: hidden;
 
-        >p {
-            margin: 10px 0;
-            color: #C28F39;
-            font-size: 12px;
-        }
-
-        .btn {
-            margin-top: 50px;
-            font-size: 20px;
-            color: white;
-            text-align: center;
-            line-height: 60px;
-            background-color: #BFA764;
-            width: 60px;
-            height: 60px;
-            border-radius: 100%;
-
-            &:hover {
-                color: rgb(231, 77, 77);
-            }
-        }
-    }
-
-    .right {
-        width: 650px;
-        overflow: hidden;
-
-        >img {
-            display: block;
-            width: 100%;
-            height: 350px;
-        }
-    }
-}
-
-.jump2 {
-    display: flex;
-    width: 1200px;
-    margin: 20px auto;
-
-    .right2 {
-        background-color: #F9F4E4;
-        width: 57%;
-        padding: 20px;
-
-        >h4 {
-            color: #C28F39;
-            font-size: 16px;
-            font-weight: lighter;
-
-            &:hover {
-                color: rgb(231, 77, 77);
-            }
-        }
-
-        >span {
-            display: inline-block;
-        }
-
-        >p {
-            margin: 10px 0;
-            color: #C28F39;
-            font-size: 12px;
-        }
-
-        .btn {
-            margin: 20px 0 0 600px;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            line-height: 45px;
-            background-color: #BFA764;
-            width: 45px;
-            height: 45px;
-            border-radius: 100%;
-
-
-            &:hover {
-                color: rgb(231, 77, 77);
+            >img {
+                display: block;
+                width: 100%;
+                height: 250px;
             }
         }
     }
 
-    .left2 {
-        width: 43%;
-        overflow: hidden;
+    :first-child {
+        flex-direction: row-reverse;
 
-        >img {
-            display: block;
-            width: 100%;
-            height: 250px;
+        .left2 {
+            width: 650px;
+            overflow: hidden;
+
+            >img {
+                display: block;
+                width: 100%;
+                height: 350px;
+            }
+        }
+
+        .right2 {
+            background-color: #F9F4E4;
+            height: 290px;
+            width: 550px;
+            padding: 30px;
+
+            >h4 {
+                color: #C28F39;
+                font-size: 20px;
+                font-weight: lighter;
+
+                &:hover {
+                    color: rgb(231, 77, 77);
+                }
+            }
+
+            >span {
+                display: inline-block;
+                font-size: 20px;
+            }
+
+            >p {
+                margin: 10px 0;
+                color: #C28F39;
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                line-height: 60px;
+                background-color: #BFA764;
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                margin-left: 10px;
+
+                &:hover {
+                    color: rgb(231, 77, 77);
+                }
+            }
         }
     }
 }
