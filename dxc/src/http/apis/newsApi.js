@@ -1,4 +1,4 @@
-//封装新闻模块相关接口
+//封装  新闻  模块相关接口
 import myaxios from "../MyAxios";
 import BASEURL from "../BaseUrl";
 const BMDURL=BASEURL.BMDURL

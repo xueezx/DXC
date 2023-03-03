@@ -1,20 +1,40 @@
 <template>
   <div>
-    <div class="two">
-      <img src="../../assets/me/fwln.jpg" class="font">
-      <p>服务理念</p>
+
+    <div v-for="item in ideas" :key="item.id">
+      <div class="two">
+        <img :src="item.pic" class="font">
+      </div>
+      <p>{{item.content}}</p>
     </div>
-    <p>
-      “厚道做人，地道做事，成人达己，追求卓越”是稻香村集团的品牌精神，也是稻香村集团的服务理念。
-      这不仅仅是一句标语，一句口号，也是稻香村人做人做事的原则和标准。
-    </p>
-    
+
+    <div style="height:80px"></div>
   </div>
 </template>
 
 <script>
+import  httpApi  from '../../http';
+
+
   export default {
-    
+    data() {
+      return {
+        ideas: []
+      }
+    },
+    methods: {
+      listIdeas(){
+        httpApi.meApi.queryFwln().then(res=>{
+          console.log('加载服务理念',res);
+          this.ideas=res.data.data
+        })
+      }
+    },
+    mounted(){
+      this.listIdeas()
+    }
+
+
   }
 </script>
 
@@ -29,6 +49,11 @@
     width: 200px;
     margin: auto;
   }
+}
+
+p{
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 </style>

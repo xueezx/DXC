@@ -1,4 +1,4 @@
-//封装品牌模块相关接口
+//封装  品牌  模块相关接口
 import myaxios from "../MyAxios";
 import BASEURL from "../BaseUrl";
 const BMDURL=BASEURL.BMDURL
@@ -68,7 +68,7 @@ const brandApi={
   queryHonor(){
     let url = BMDURL + "/jtrytop";
     return myaxios.get(url,params)
-  },
+  }
 
 }
 

@@ -1,4 +1,4 @@
-//封装我们模块相关接口
+//封装  我们  模块相关接口
 import myaxios from "../MyAxios";
 import BASEURL from "../BaseUrl";
 const BMDURL=BASEURL.BMDURL
@@ -8,7 +8,7 @@ const meApi={
   /** 1.查询所有分支机构  返回promise对象 */
   queryAllBranch(){
     let url = BMDURL + "/fzjg";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /**
@@ -32,10 +32,10 @@ const meApi={
   },
 
 
-    /** 查询所有加工厂*/
+  /** 查询所有加工厂,轮播图*/
   queryAllPlant(){
     let url = BMDURL + "/jgc";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /**
@@ -61,7 +61,7 @@ const meApi={
   /** 查询服务理念*/
   queryFwln(){
     let url = BMDURL + "/fwln";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
     /** 查询食品制作步骤*/
