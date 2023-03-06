@@ -63,17 +63,13 @@ router.get('/jmsq/result', (req, resp) => {
  *   {code:200, msg:'ok'}
  */
 router.post('/jmsq/add', (req, resp) => {
-  let { name, sex, phone, area, shop, invest, fund, liuyan } = req.body // post请求参数在req.body中
+  let { name, email, phone, liuyan } = req.body // post请求参数在req.body中
 
   // 表单验证
   let schema = Joi.object({
     name: Joi.string().required(),
-    sex: Joi.boolean().required(),
+    email: Joi.string().required(),
     phone: Joi.number().required(),
-    area: Joi.string().required(),
-    shop: Joi.boolean().required(),
-    invest: Joi.string().required(),
-    fund: Joi.string().required(),
     liuyan: Joi.string().required(),
   })
   let { error, value } = schema.validate(req.body)
@@ -84,18 +80,14 @@ router.post('/jmsq/add', (req, resp) => {
 
   // 表单验证通过，执行添加操作
   let sql = `insert into dxc_jmsq (
-    name, sex, phone, area, shop, invest, fund, liuyan) values (?,?,?,?,?,?,?,?)`
-  pool.query(
-    sql,
-    [name, sex, phone, area, shop, invest, fund, liuyan],
-    (error, result) => {
-      if (error) {
-        resp.send(Response.error(500, error))
-        throw error
-      }
-      resp.send(Response.ok())
+    name, email, phone, liuyan) values (?,?,?,?)`
+  pool.query(sql, [name, email, phone, liuyan], (error, result) => {
+    if (error) {
+      resp.send(Response.error(500, error))
+      throw error
     }
-  )
+    resp.send(Response.ok())
+  })
 })
 
 /**
