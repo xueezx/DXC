@@ -67,7 +67,7 @@ const meApi={
     /** 查询食品制作步骤*/
   querySteps(){
     let url = BMDURL + "/spaq";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
 }

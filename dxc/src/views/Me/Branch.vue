@@ -6,7 +6,7 @@
     </div>
 
     <template>      
-      <el-carousel :interval="4000" type="card" height="300px" class="banner">
+      <el-carousel :interval="2000" type="card" height="300px" class="banner">
         <el-carousel-item v-for="item in banners" :key="item.id" class="banner-item">
           <img :src="item.pic" alt="">
         </el-carousel-item>
@@ -19,14 +19,14 @@
     </div>
 
     <ul class="fgs">
-      <li>
+      <li v-for="item in branches" :key="item.id">
           <div>
-            <p class="name">苏州稻香村食品有限公司</p>
-            <p class="xx">地址:  苏州工业园区唯亭镇唯文路19 号</p>
-            <p class="xx">邮编:  18100000000</p>
-            <p class="xx">电话:  0512-87182818</p>
-            <p class="xx">传真:  0512-87182818</p>
-            <p class="xx">网址:  www.daoxiangcun.cn</p>
+            <p class="name">{{item.title}}</p>
+            <p class="xx">地址:  {{item.address}}</p>
+            <p class="xx">邮编:  {{item.postal_code}}</p>
+            <p class="xx">电话:  {{item.phone}}</p>
+            <p class="xx">传真:  {{item.fax}}</p>
+            <p class="xx">网址:  {{item.website}}</p>
           </div>
       </li>
     </ul>
@@ -54,11 +54,15 @@ import httpApi from '../../http'
         })
       },
       queryBranches(){
-        
+        httpApi.meApi.queryAllBranch().then(res=>{
+          console.log('加载分支机构信息',res);
+          this.branches=res.data.data
+        })
       }
     },
     mounted(){
       this.banner()
+      this.queryBranches()
     }
   }
 </script>
@@ -70,11 +74,12 @@ import httpApi from '../../http'
   background-size: contain; 
   background-repeat: no-repeat;
   display: flex;
+  .font{
+    width: 380px;
+    margin: auto;
+  }
 }
-.font{
-  width: 380px;
-  margin: auto;
-}
+
 
 .two2{
   height: 173px;
@@ -82,11 +87,10 @@ import httpApi from '../../http'
   background-size: contain; 
   background-repeat: no-repeat;
   display: flex;
-}
-
-.font2{
-  width: 200px;
-  margin: auto;
+  .font2{
+    width: 200px;
+    margin: auto;
+  }
 }
 
 
@@ -98,19 +102,21 @@ import httpApi from '../../http'
       object-fit: cover;
     }
   }
-
 }
 
 
 //分公司
 .fgs{
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 80px;
   li{
-    width: calc(100% / 3);
+    width: 400px;
     background-color: #fff;
     padding: 20px;
     border: 1px solid #c9b053;
+    box-sizing: border-box;
+
     div{
       .name{
         font-size: 24px;
