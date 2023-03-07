@@ -9,30 +9,30 @@ const foodsApi={
   /** 1.查询  产品分类  */
   queryFoodsClass(){
     let url = BMDURL + "/cpfl";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /** 通过  产品分类id  查询  产品类型  {cpfl_id} */
-  queryTypeByClass(){
-    let url = BMDURL + "/cplx/query_item?cpfl_id=3";
+  queryTypeByClass(params){
+    let url = BMDURL + "/cplx/query_item";
     return myaxios.get(url,params)
   },
 
   /** 通过  产品类型id  查询  同一类型产品{cplx_id} */
-  queryFoodsByType(){
-    let url = BMDURL + "/cplx/query_all?cplx_id=1";
+  queryFoodsByType(params){
+    let url = BMDURL + "/cplx/query_all";
     return myaxios.get(url,params)
   },
 
   /** 通过名称关键字查询相关产品{name} */
-  queryFoodsByName(){
+  queryFoodsByName(params){
     let url = BMDURL + "/cp/name";
-    return myaxios.get(url,params)
+    return myaxios.post(url,params)
   },
 
   /** 分页查询同一类型所有产品{cplx_id,page,pagesize} */
-  queryFoodsByPage(){
-    let url = BMDURL + "/cps?cplx_id=1&page=1&pagesize=9";
+  queryFoodsByPage(params){
+    let url = BMDURL + "/cps";
     return myaxios.get(url,params)
   },
 
@@ -41,8 +41,8 @@ const foodsApi={
 
 
   /** 通过id查询产品详情{id} */
-  queryFoodsDetailsById(){
-    let url = BMDURL + "cplx/query_details?id=2";
+  queryFoodsDetailsById(params){
+    let url = BMDURL + "/cplx";
     return myaxios.get(url,params)
   },
 

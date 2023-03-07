@@ -8,7 +8,7 @@ const brandApi={
   /** 1.查询所有品牌历史  返回promise对象 */
   queryAllBrand(){
     let url = BMDURL + "/ls";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /** 3.删除 {id:01} */
@@ -29,7 +29,7 @@ const brandApi={
   /** 查询所有传承人*/
   queryAllInheritor(){
     let url = BMDURL + "/ccr";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /** 删除 {id:01} */
@@ -50,7 +50,7 @@ const brandApi={
   /** 查询集团荣誉  上*/
   queryHonorTop(){
     let url = BMDURL + "/jtrytop";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   },
 
   /** 删除 {id:01} */
@@ -67,7 +67,7 @@ const brandApi={
 
   queryHonor(){
     let url = BMDURL + "/jtrytop";
-    return myaxios.get(url,params)
+    return myaxios.get(url)
   }
 
 }

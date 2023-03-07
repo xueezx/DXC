@@ -12,12 +12,12 @@
                         <span>我们</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li class="one"  @click="$router.push('/home/me/introduction')">企业介绍</li>
-                                <li @click="$router.push('/home/me/service')">服务理念</li>
-                                <li @click="$router.push('/home/me/strategy')">国际站略</li>
-                                <li @click="$router.push('/home/me/branch')">分支机购</li>
-                                <li @click="$router.push('/home/me/foodsafety')">食品安全</li>
-                                <li @click="$router.push('/home/me/social')">社会责任</li>
+                                <li class="one">企业介绍</li>
+                                <li>服务理念</li>
+                                <li>国际站略</li>
+                                <li>分支机购</li>
+                                <li>食品安全</li>
+                                <li>社会责任</li>
                             </ul>
                         </div>
                     </li>
