@@ -14,7 +14,7 @@
       <div class="gaodian">
         <div class="tupian">
           <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
-          <span>了解更多</span>
+          <span  @click="$router.push('/home/pastry')">了解更多</span>
         </div>
         <div class="gd2">
           <div class="gd2-2">
