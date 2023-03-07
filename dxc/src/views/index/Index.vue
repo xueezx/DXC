@@ -37,7 +37,7 @@
                     <div class="left">
                         <img src="@/assets/2_cut895560.jpg" alt="">
                     </div>
-                    <div class="right">1440524041a91a413-f_cut285270.jpg
+                    <div class="right">
                         <ul>
                             <li>
                                 <img src="@/assets/94859870ca2ed311-7_cut285270.jpg" alt="">
