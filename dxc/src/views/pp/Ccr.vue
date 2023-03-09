@@ -14,11 +14,11 @@
                 <img src="@/assets/pp/ccr_1.jpg" alt="">
                 <p>苏州稻香村自1773年以后作坊内的每大类产品都有一个把作师傅作为技术、培训、质量控制和生产的负责人，此人必是当时的整个行业内的领袖人物，直到1956年公私合营前都称为“把作师傅”。为了不让技术外泄并能世代相传，把作师傅终身服务于稻香村，他和东家共同选择德才兼备的学徒传授技艺，并且每代传人数量有限，一般不超过3人，至目前能够确切追溯到的传承谱系如下：
                 </p>
-                <div class="li" v-for="item in 6" :key="item">
-                    <h2>第一代</h2>
+                <div class="li" v-for="item in cc" :key="item.id">
+                    <h2>{{ item.title }}</h2>
                     <hr>
-                    <span>吴金棠，镇江人，清光绪三十二年（1906）进稻香村作学徒，作糕饼师傅，1958年退休。</span>
-                    <img src="" alt="">
+                    <span>{{ item.info }}</span>
+                    <img :src=item.pic alt="">
                 </div>
             </div>
         </div>
@@ -26,8 +26,25 @@
 </template>
 
 <script>
-export default {
+import httpApi from '@/http';
 
+export default {
+    data() {
+        return {
+            cc: []
+        }
+    },
+    methods: {
+        upload() {
+            httpApi.brandApi.queryAllInheritor().then(res => {
+                console.log('传承人', res);
+                this.cc = res.data.data
+            })
+        }
+    },
+    mounted() {
+        this.upload()
+    }
 }
 </script>
 
@@ -76,6 +93,7 @@ export default {
             }
 
             .li {
+
                 >h2 {
                     color: #ceaf59;
                     font-weight: lighter;
@@ -87,6 +105,10 @@ export default {
                     width: 100%;
                     text-align: start;
                     margin: 10px 0 20px 0;
+                }
+
+                >img {
+                    width: 100%;
                 }
             }
 

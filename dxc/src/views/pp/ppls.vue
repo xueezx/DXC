@@ -17,16 +17,16 @@
                 <div class="jiantou"></div>
                 <span>2022</span>
             </div>
-            <div class="total" v-for="item in 2">
+            <div class="total" v-for="item in ls" :key="item.id">
                 <div class="left">
                     <div class="kuang">
                         <div class="l1">
-                            <span>2022中国品牌价值评价信息发布，稻香村集团品牌价值182.77亿元。</span>
+                            <span>{{ item.title }}</span>
                             <img src="@/assets/pp/left_bg.jpg" alt="">
                         </div>
                         <div class="l2">
-                            <img src="@/assets/pp/ccr_5(1).jpg" alt="">
-                            <div>2023</div>
+                            <img :src=item.pic alt="">
+                            <div>{{ item.ctime }}</div>
                         </div>
                     </div>
                     <div class="line1-2"></div>
@@ -42,11 +42,11 @@
                     </div>
                     <div class="kuang2">
                         <div class="r2">
-                            <img src="@/assets/pp/ccr_5(1).jpg" alt="">
-                            <div>2023</div>
+                            <img :src=item.pic alt="">
+                            <div>{{ item.ctime }}</div>
                         </div>
                         <div class="r1">
-                            <span>2022中国品牌价值评价信息发布，稻香村集团品牌价值182.77亿元。</span>
+                            <span>{{ item.title }}</span>
                             <img src="@/assets/pp/right_bg2.jpg" alt="">
                         </div>
                     </div>
@@ -64,8 +64,24 @@
 </template>
 
 <script>
+import httpApi from '@/http'
 export default {
-
+    data() {
+        return {
+            ls: []
+        }
+    },
+    methods: {
+        upload() {
+            httpApi.brandApi.queryAllBrand().then(res => {
+                console.log('全部历史', res);
+                this.ls = res.data.data
+            })
+        }
+    },
+    mounted() {
+        this.upload()
+    }
 }
 </script>
 
