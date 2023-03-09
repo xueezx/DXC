@@ -9,6 +9,7 @@ const routes = [
     path: '/',
     redirect: '/home/index',
   },
+
   {
     path: '/home',
     name: 'home',
@@ -53,8 +54,9 @@ const routes = [
           },
         ]
       },
+
+      //产品
       {
-        //产品
         path: 'eat',
         component: () => import('../views/eat/Eat.vue'),
         meta: {
@@ -96,8 +98,8 @@ const routes = [
         // redirect:'/home/index',
         component: () => import('../views/index/Index.vue')
       },
-      //品牌
 
+      //品牌
       {
         path: 'pp',
         redirect: '/home/pp/items',

@@ -55,7 +55,7 @@
                         <div class="nav-center-yc">
                             <ul>
                                 <li class="one" @click="$router.push('/home/pastry')">糕点系列</li>
-                                <li>休闲食品</li>
+                                <li @click="$router.push('/home/snack')">休闲食品</li>
                                 <li>节日食品</li>
                                 <li>面包主食</li>
                                 <li>坚果系列</li>

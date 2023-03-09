@@ -7,9 +7,9 @@ const BMDURL=BASEURL.BMDURL
 const adminApi={
 
   /**  管理员登录{username,password} */
-  queryAdmin(){
+  queryAdmin(params){
     let url = BMDURL + "user/login";
-    return myaxios.get(url,params)
+    return myaxios.post(url,params)
   },
 
 

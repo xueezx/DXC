@@ -50,7 +50,7 @@ const brandApi = {
   /** 查询集团荣誉  上*/
   queryHonorTop() {
     let url = BMDURL + "/jtrytop";
-    return myaxios.get(url, params)
+    return myaxios.get(url)
   },
 
   /** 删除 {id:01} */
@@ -67,7 +67,7 @@ const brandApi = {
 
   queryHonor() {
     let url = BMDURL + "/jtrytop";
-    return myaxios.get(url, params)
+    return myaxios.get(url)
   }
 
 }

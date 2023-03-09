@@ -31,17 +31,12 @@
     </ul>
 
     <!-- 制作流程 -->
-    <div class="step">
-      <img src="../../assets/me/step01.jpg">
+    <div class="step" v-for="item in steps" :key="item.id">
+      <img :src="item.pic">
       <div class="text">
-        <p class="id">01</p>
-        <p class="name">选料、制陷工艺</p>
-        <p class="cont">
-          稻香村集团在江苏、山东、湖南、云南等地联合建有原料基地，
-          严格把控原料来源，甄选健康新鲜优质原料，面粉、食用油等原材料为集团统一采购模式，
-          选用中粮、福临门等大品牌，保证原料品质与质量。制馅采用传统制馅工艺，结合现代化加工，
-          保证馅料的传统口味与健康。
-        </p>
+        <p class="id">{{item.id}}</p>
+        <p class="name">{{item.title}}</p>
+        <p class="cont">{{item.content}}</p>
       </div>
     </div>
 
@@ -51,7 +46,25 @@
 </template>
 
 <script>
-export default {};
+import httpApi from '../../http';
+export default {
+  data() {
+    return {
+      steps: []  //保存食品制作步骤
+    }
+  },
+  methods: {
+    querySteps() {
+      httpApi.meApi.querySteps().then(res=>{
+        console.log('加载食品制作步骤',res);
+        this.steps=res.data.data
+      })
+    }
+  },
+  mounted(){
+    this.querySteps()
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -116,14 +129,18 @@ export default {};
   display: flex;
   border-radius: 6px;
   overflow: hidden;
-  padding-bottom: 80px;
+  &:nth-child(2n){
+    flex-direction: row-reverse;
+  }
 
   img{
-    width: 50%;
+    // width: 50%;
+    flex: 1;
   }
 
   .text{
-    padding: 30px;
+    // width: 50%;
+    flex: 1;
     background-color: #f9f4e4;
 
     .id{
@@ -140,6 +157,7 @@ export default {};
     .cont{
       font-size: 14px;
       color: #333;
+      padding: 30px;
     }
   }
 }
