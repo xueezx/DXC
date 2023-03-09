@@ -12,16 +12,19 @@
         <!-- 轮播图 -->
         <div class="lbt">
             <el-carousel :interval="4000" type="card" height="350px">
-                <el-carousel-item v-for="item in 6" :key="item">
+                <el-carousel-item v-for="item in topBanner" :key="item.id">
                     <div class="bg">
                         <div class="lbta">
-                            <img class="lbtb" src="@/assets/pp/143574026776ab42-6_cen315315.jpg" alt="">
-                            <span>面包技术比赛金奖</span>
+                            <img class="lbtb" :src="item.pic" alt="">
+                            <span>{{item.title}}</span>
                         </div>
                     </div>
                 </el-carousel-item>
             </el-carousel>
         </div>
+
+
+
         <div class="cards">
             <div class="sl" v-for="item in 8" :key="item">
                 <div class="card">
@@ -34,7 +37,37 @@
 </template>
 
 <script>
+import httpApi from '../../http'
 export default {
+data() {
+    return {
+        topBanner: [],
+        honor:[]
+    }
+},
+
+
+methods: {
+    queryBanner() {
+        httpApi.brandApi.queryHonorTop().then(res=>{
+            console.log('加载页面上方轮播图',res);
+            this.topBanner=res.data.data
+        })
+    },
+    queryHonor(){
+        httpApi.brandApi.queryHonor().then(res=>{
+            console.log('加载荣誉',res);
+            this.honor=res.data.data
+        })
+    }
+},
+
+
+mounted(){
+    this.queryBanner()
+    this.queryHonor()
+}
+
 
 }
 </script>
