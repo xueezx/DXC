@@ -2,11 +2,11 @@
     <div class="jt">
         <!-- 面包屑导航 -->
         <div class="breadcrumb" style="min-width:320px">
-            <span style="margin-left:20px;line-height:100%">您现在的位置：</span>
+            <span style="margin-left:20px;line-height:100%" class="wz">您现在的位置：</span>
             <el-breadcrumb style="margin:0 0 0 20px;display:inline-block" separator-class="el-icon-arrow-right">
-                <el-breadcrumb-item style="text-decoration: none;" :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item>新闻</el-breadcrumb-item>
-                <el-breadcrumb-item><span style="color:red">集团新闻</span></el-breadcrumb-item>
+                <el-breadcrumb-item style="text-decoration: none;" :to="{ path: '/' }" class="wz">首页</el-breadcrumb-item>
+                <el-breadcrumb-item class="wz">新闻</el-breadcrumb-item>
+                <el-breadcrumb-item><span style="color:red" class="wz">集团新闻</span></el-breadcrumb-item>
             </el-breadcrumb>
         </div>
 
@@ -86,6 +86,11 @@ export default {
     width: 1200px;
     margin: auto;
     padding-top: 20px;
+    .wz{
+        font-weight: normal;
+        font-size: 14px;
+        color: #333;
+    }
 }
 
 .bt1 {
