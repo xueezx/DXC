@@ -66,10 +66,9 @@
                 </ul>
             </div>
             <div class="nav-right">
-                <div>
-                    <input name="" id="">
-                    <img src="../assets/8.png" alt="">
-                </div>
+                <el-input placeholder="请输入查询新闻关键字" v-model="input" class="input-with-select">
+                    <el-button @click="aboutNew" slot="append" icon="el-icon-search"></el-button>
+                </el-input>
             </div>
         </div>
 
@@ -146,6 +145,25 @@
 </template>
 
 <script>
+import httpApi from '@/http'
+export default {
+    data() {
+        return {
+            input: '',
+            select: ''
+        }
+    },
+    methods: {
+        aboutNew() {
+            let params = this.input
+            httpApi.newsApi.queryAboutNews(params).then(res => {
+                console.log('相关新闻', res);
+                console.log(params);
+                this.input = ''
+            })
+        }
+    }
+}
 </script>
 <style scoped lang="scss">
 .home {
@@ -161,11 +179,13 @@
         display: flex;
         align-items: center;
         box-shadow: 2px 2px 10px #333333;
+        background-color: #FCF9F0;
 
         .nav-left {
             width: 20%;
             height: 100%;
             background: #FCF9F0;
+            border-right: 1px solid #CEAF59;
 
             img {
                 margin-left: 40px;
@@ -188,7 +208,7 @@
                     width: 20%;
                     height: 100%;
                     align-items: center;
-                    border-left: 1px solid #CEAF59;
+                    border-right: 1px solid #CEAF59;
 
 
                     img {
@@ -254,29 +274,7 @@
         }
 
         .nav-right {
-            background: #FCF9F0;
-            display: flex;
-            width: 20%;
-            height: 100%;
-            border-left: 1px solid #CEAF59;
-            justify-content: center;
-
-            >div {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                >input {
-                    width: 100px;
-                    height: 28px;
-                }
-
-                >img {
-                    margin-left: -20px;
-                }
-            }
-
+            padding: 10px;
         }
 
     }
