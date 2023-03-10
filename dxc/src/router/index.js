@@ -15,6 +15,11 @@ const routes = [
     name: 'home',
     component: HomeView,
     children: [
+      {
+        path: '/about/:text',
+        name: 'about',
+        component: () => import('../views/AboutView.vue')
+      },
       //news
       {
         path: 'new',
@@ -222,11 +227,7 @@ const routes = [
     ]
   },
 
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
-  },
+
 
 
 
