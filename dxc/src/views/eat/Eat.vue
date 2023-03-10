@@ -78,7 +78,7 @@
       </div>
       <div class="mianbao">
         <div class="tupian">
-          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
+          <img class="gd1" src="../../assets/105744002a9c4270-4.jpg" alt="" />
           <span @click="$router.push('/home/bread')">了解更多</span>
         </div>
         <div class="gd2">
@@ -101,7 +101,7 @@
       </div>
       <div class="jianguo">
         <div class="tupian">
-          <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
+          <img class="xx1" src="../../assets/11535404c5e8840e-9.jpg" alt="" />
           <span @click="$router.push('/home/nut')">了解更多</span>
         </div>
         <div class="xx2">
@@ -124,7 +124,7 @@
       </div>
       <div class="sudong">
         <div class="tupian">
-          <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
+          <img class="gd1" src="../../assets/105727431d17cb657-5.jpg" alt="" />
           <span @click="$router.push('/home/frozen')">了解更多</span>
         </div>
         <div class="jr">
@@ -372,6 +372,7 @@ export default {
 
   a {
     color: #fff;
+    cursor: pointer;
   }
 }
 
@@ -395,6 +396,7 @@ export default {
   margin: 20px 40px 20px 0;
   border: 1px none;
   color: #fff;
+  cursor: pointer;
 }
 
 .d1:hover {
@@ -431,6 +433,7 @@ export default {
   border-radius: 50%;
   > a {
     color: #fff;
+    cursor: pointer;
   }
 }
 .qjin:hover {
@@ -504,6 +507,7 @@ export default {
         font-size: 30px;
         padding-top: 15px;
         margin-bottom: 15px;
+        cursor: pointer;
       }
       p {
         font-size: 14px;
@@ -520,6 +524,7 @@ export default {
         align-items: center;
         right: 135px;
         bottom: 90px;
+        cursor: pointer;
       }
     }
   }

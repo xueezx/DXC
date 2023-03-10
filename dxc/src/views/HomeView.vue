@@ -59,13 +59,13 @@
                         <div class="nav-center-yc">
                             <ul>
                                 <li class="one">
-                                    糕点系列
+                                    <a style="color:#666;" href="snack">糕点系列</a>
                                 </li>
-                                <li><a href="snack">休闲食品</a></li>
-                                <li><a href="festive">节日食品</a></li>
-                                <li><a href="bread">面包主食</a></li>
-                                <li><a href="nut">坚果系列</a></li>
-                                <li><a href="frozen">速冻食品</a></li>
+                                <li><a style="color:#666;" href="snack">休闲食品</a></li>
+                                <li><a style="color:#666;" href="festive">节日食品</a></li>
+                                <li><a style="color:#666;" href="bread">面包主食</a></li>
+                                <li><a style="color:#666;" href="nut">坚果系列</a></li>
+                                <li><a style="color:#666;" href="frozen">速冻食品</a></li>
                             </ul>
                         </div>
                     </li>

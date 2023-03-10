@@ -375,6 +375,7 @@ export default {
   position: absolute;
   bottom: 15px;
   right: 15px;
+  cursor: pointer;
 }
 
 .d1:hover {

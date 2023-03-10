@@ -306,8 +306,10 @@ export default {
 .pic {
   width: 380px;
   overflow: hidden;
+  height: 380px;
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
@@ -354,6 +356,7 @@ export default {
   position: absolute;
   bottom: 15px;
   right: 15px;
+  cursor: pointer;
 }
 
 .d1:hover {

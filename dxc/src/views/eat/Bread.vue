@@ -375,6 +375,7 @@ export default {
   right: 15px;
   border: 1px none;
   color: #fff;
+  cursor: pointer;
 }
 
 .d1:hover {
