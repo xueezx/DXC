@@ -3,7 +3,7 @@
     <h2>{{ this.new.title }}</h2>
     <hr color="#ceaf59" />
     <span style="color: #ddb864">时间：{{ this.new.ctime }}</span>
-    <div v-for="item in detail">
+    <div v-for="(item, i) in detail" :key="i">
       <img :src="item.new_pic" alt="" />
       <span>{{ item.pic_title }}</span>
       <p>{{ item.new_content }}</p>
