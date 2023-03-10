@@ -84,13 +84,40 @@
             </div>
             <div class="last">
                 <ul>
-                    <li v-for="item in 4">
-                        <img src="@/assets/pp/18017489c300967f-c_cut500413.jpg" alt="">
+                    <li>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2017/7/25/1648116652a58864f-5_cut595484.jpg" alt="">
                         <div class="wz">
                             <h4>携手共进，激扬青春”稻香村集团大学生储备人员素质...</h4>
                             <p class="p1">jul 25,2017</p>
                             <p class="p2">
                                 2017年7月21日晚上6点，稻香村集团北京分公司人力资源部组织第一届大学生储备人员开展了“携手共进，激扬青春”素质拓展集训活动。活动共有26位大学生参加，参与...</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2017/1/6/18017489c300967f-c_cut500413.jpg" alt="">
+                        <div class="wz">
+                            <h4>稻香村振兴民族品牌 成功举办中华老字号品牌故事演讲...</h4>
+                            <p class="p1">jul 06,2017</p>
+                            <p class="p2">
+                                12月2日，稻香村集团承办的中华老字号品牌故事演讲比赛在稻香村集团北京生产基地顺利举行。本次品牌故事演讲比赛由中国国际贸易促进委员会商业行业分会、新华社...</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2017/5/9/9249176bb6133f7-1_cut500413.jpg" alt="">
+                        <div class="wz">
+                            <h4>“绿色出行，骑乐无穷” 稻香村春季团队建设骑行活动...</h4>
+                            <p class="p1">apr 13,2017</p>
+                            <p class="p2">
+                                春光明媚，林荫苍翠。4月12日下午14点，稻香村集团北京分公司组织员工开展了2017年“绿色出行，骑乐无穷”环保骑行活动。100位骑手整装待发，浩浩荡荡出发前往通...</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2020/9/25/9413953e221834d-5_Cut285180.jpg" alt="">
+                        <div class="wz">
+                            <h4>稻香村集团与中外来宾共迎中秋,欢度佳节,赏月思乡...</h4>
+                            <p class="p1">sept 25,2020</p>
+                            <p class="p2">
+                                在中秋佳节来临之际，9月22日，由北京市政府新闻办官方账号“北京发布”以及有关媒体共同推出的中秋特别活动——“凝聚思念的中国味道，稻香村集团与中外来宾共迎中秋”在稻香村集团北京基地成功举办...</p>
                         </div>
                     </li>
                 </ul>
@@ -352,16 +379,20 @@ export default {
                 }
 
                 img {
-                    width: 100%;
+                    width: 230px;
+                    height: 190px;
+                    object-fit: cover;
                 }
 
                 .wz {
                     padding: 10px;
                     height: 200px;
 
-                    h3 {
+                    h4 {
                         color: #b78439;
-                        font-weight: 300;
+                        font-weight: bold;
+                        font-size: 16px;
+                        margin-bottom: 20px;
                     }
 
                     .p1 {

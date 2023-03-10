@@ -12,35 +12,37 @@ const newsApi = {
     return myaxios.get(url)
   },
 
-  /** 分页查询同一分类所有新闻 {xwfl_id,page,pagesize}*/
+  /** 2. 分页查询同一分类所有新闻 {xwfl_id,page,pagesize}*/
   queryNewsByPage(params) {
     let url = BMDURL + "/xwsj";
     return myaxios.get(url, params)
   },
+
+  /** 3. 通过id查询新闻详情 {id}*/
   queryDetail(params) {
     let url = BMDURL + "/xwsj/detail";
     return myaxios.get(url, params)
   },
 
-  /** 模糊查询相关新闻{keywords}*/
+  /** 4. 模糊查询相关新闻{keywords}*/
   queryAboutNews(params) {
     let url = BMDURL + "/xwsj/keywords";
     return myaxios.post(url, params)
   },
 
-  /** 删除新闻 {id:01} */
+  /** 5. 删除新闻 {id:01} */
   delNews(params) {
     let url = BMDURL + "/xwsj/del";
     return myaxios.post(url, params)
   },
 
-  /** 添加 {title,address,postal_code,phone,fax,website}*/
+  /** 6. 添加 {title,address,postal_code,phone,fax,website}*/
   addNews(params) {
     let url = BMDURL + "/xwsj/add";
     return myaxios.post(url, params)
   },
 
-  //修改新闻
+  // 7.修改新闻
   updateNew(params) {
     let url = BMDURL + "/xwsj/add";
     return myaxios.post(url, params)
