@@ -56,7 +56,7 @@ export default {
         },
         queryHonor() {
             httpApi.brandApi.queryHonor().then(res => {
-                // console.log('加载荣誉', res);
+                console.log('加载荣誉', res);
                 this.honor = res.data.data
             })
         }

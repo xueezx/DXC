@@ -28,11 +28,11 @@
                     <div class="btn">请进</div>
                 </div>
             </div>
+            <!-- 分页器 -->
+            <el-pagination style="margin: 10px" background :total="newsData.total" :page-size="newsData.pagesize"
+                :current-page="newsData.page" layout="->, total, prev, pager, next, jumper"
+                @current-change="changeCurrentPage"></el-pagination>
         </div>
-        <!-- 分页器 -->
-        <el-pagination style="margin: 10px" background :total="newsData.total" :page-size="newsData.pagesize"
-            :current-page="newsData.page" layout="->, total, prev, pager, next, jumper"
-            @current-change="changeCurrentPage"></el-pagination>
     </div>
 </template>
 
@@ -48,9 +48,8 @@ export default {
                 // 保存电影数据
                 page: 1, // 当前页码
                 pagesize: 10, // 每页多少条
-                total: 999, // 总条目数
+                total: 100, // 总条目数
                 xwfl_id: 1, //新闻类型id
-                result: [], // 电影列表
             },
         }
     },
@@ -63,7 +62,7 @@ export default {
         },
         changeCurrentPage(page) {
             this.newsData.page = page // 修改当前页
-            this.queryMovies() // 重新加载当前页的新闻列表
+            this.upload() // 重新加载当前页的新闻列表
         },
         upload() {
             let params = {
