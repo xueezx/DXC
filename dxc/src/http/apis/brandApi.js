@@ -66,7 +66,7 @@ const brandApi = {
   },
 
   queryHonor() {
-    let url = BMDURL + "/jtrytop";
+    let url = BMDURL + "/jtry";
     return myaxios.get(url)
   }
 
