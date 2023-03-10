@@ -74,12 +74,12 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{item.title}}</a>
+                <a @click="$router.push(`/home/eat-detail/${item.id}`)">{{item.title}}</a>
               </h1>
               <span
                 >{{item.detail}}</span
               >
-              <a href="#" class="d1">请进</a>
+              <a @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -155,6 +155,7 @@ export default {
     },
   },
   mounted(){
+    window.scrollTo(0, 0)
     this.queryTypes()  
     this.queryCpxl()
     this.queryAllPastry()
@@ -327,6 +328,7 @@ export default {
 
   a {
     color: #fff;
+    cursor: pointer;
   }
 }
 

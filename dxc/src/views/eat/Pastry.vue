@@ -75,12 +75,12 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{item.title}}</a>
+                <a  @click="$router.push(`/home/eat-detail/${item.id}`)">{{item.title}}</a>
               </h1>
               <span
                 >{{item.detail}}</span
               >
-              <a href="#" class="d1">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -105,7 +105,6 @@ export default {
       value1:[],
       types:[],
       cp:[],
-      tic:[],
       p:[]
     };
   },
@@ -116,7 +115,6 @@ export default {
         page: 1,
         pagesize: 100,
       };
-      //糕点
       httpApi.eatApi.queryFoodsByPage(params).then((res) => {
         console.log(res);
         this.pastrys = res.data.data
@@ -125,10 +123,8 @@ export default {
         let tic=res.data.data.pic
         console.log('1',tic);
         for(let i=0;i<=pic.length;i++ ){
-          // this.pic.push((pic[i].pic).split('@',[1]))
           this.p.push(pic[i].pic.split('@'))
           console.log('p',this.p)
-          // console.log(this.pic+':图片')
         }
       });
     },
@@ -172,17 +168,15 @@ export default {
         this.pastrys = res.data.data
         console.log('糕点数据',this.pastrys )
         let pic = this.pastrys
-        let tic=res.data.data.pic
         console.log('1');
         for(let i=0;i<=pic.length;i++ ){
-          // this.pic.push((pic[i].pic).split('@',[1]))
           this.p.push(pic[i].pic.split('@'))
-          // console.log(this.pic+':图片')
         }
       });
     },
   },
   mounted(){
+    window.scrollTo(0, 0)
     this.queryTypes()  
     this.queryCpxl() 
     this.queryAllPastry()
@@ -355,6 +349,7 @@ export default {
 
   a {
     color: #fff;
+    cursor: pointer;
   }
 }
 

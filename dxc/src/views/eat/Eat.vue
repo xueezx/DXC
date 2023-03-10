@@ -24,10 +24,10 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{ item.title }}</a>
+                <a @click="$router.push(`/home/eat-detail/${item.id}`)">{{ item.title }}</a>
               </h1>
               <span>{{ item.detail }}</span>
-              <a href="eat-detail" class="d1">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -43,7 +43,7 @@
         <div class="xx2">
           <div class="xx2-1" v-for="(item,j) in snacks" :key="item.id">
             <div class="qjin">
-              <a href="#">请进</a>
+              <a @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
             <div class="xxtu">
               <img class="sp" style="height: 100%;" :src="pic1[j]" alt="" />
@@ -71,7 +71,7 @@
             <div class="text">
               <h1>{{item.title}}</h1>
               <p>{{item.texture}}</p>
-              <a class="go" href="#">请进</a>
+              <a class="go"  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
           </div>
         </div>
@@ -88,10 +88,10 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{ item.title }}</a>
+                <a  @click="$router.push(`/home/eat-detail/${item.id}`)">{{ item.title }}</a>
               </h1>
               <span>{{ item.detail }}</span>
-              <a href="eat-detail" class="d1">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -107,7 +107,7 @@
         <div class="xx2">
           <div class="xx2-1" v-for="(item,i) in nuts" :key="item.id">
             <div class="qjin">
-              <a href="#">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
             <div class="xxtu">
               <img class="sp" style="height: 100%;" :src="pic4[i]" alt="" />
@@ -135,7 +135,7 @@
             <div class="text">
               <h1>{{item.title}}</h1>
               <p>{{item.texture}}</p>
-              <a class="go" href="#">请进</a>
+              <a class="go"  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default {
       httpApi.eatApi.queryFoodsByPage(params).then((res) => {
         console.log(res);
         this.pastrys = res.data.data
-        console.log('糕点数据',this.pastrys )
+        console.log('糕点数据1',this.pastrys.id )
         let pic = this.pastrys
         for(let i=0;i<=pic.length;i++ ){
           this.pic.push((pic[i].pic).split('@',[1]))
@@ -276,6 +276,7 @@ export default {
     },
   },
   mounted() {
+    window.scrollTo(0, 0)
     this.queryAllPastry();
     this.queryAllSnack();
     this.queryAllFestive();

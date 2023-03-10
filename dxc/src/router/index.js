@@ -65,31 +65,52 @@ const routes = [
       },
       {
         path: 'bread',
-        component: () => import('../views/eat/Bread.vue')
+        component: () => import('../views/eat/Bread.vue'),
+        meta: {
+              thumb: ['首页', '产品', '面包主食']
+            }
       },
       {
         path: 'nut',
-        component: () => import('../views/eat/Nut.vue')
+        component: () => import('../views/eat/Nut.vue'),
+        meta: {
+              thumb: ['首页', '产品', '坚果系列']
+            }
       },
       {
-        path: 'eat-detail',
+        path: 'eat-detail/:id',
         component: () => import('../views/eat/EatDetail.vue'),
+        meta: {
+              thumb: ['首页', '产品','产品详情']
+            }
       },
       {
         path: 'snack',
-        component: () => import('../views/eat/Snack.vue')
+        component: () => import('../views/eat/Snack.vue'),
+        meta: {
+              thumb: ['首页', '产品', '休闲食品']
+            }
       },
       {
         path: 'festive',
         component: () => import('../views/eat/Festive.vue'),
+        meta: {
+              thumb: ['首页', '产品', '节日食品']
+            }
       },
       {
         path: 'frozen',
-        component: () => import('../views/eat/Frozen.vue')
+        component: () => import('../views/eat/Frozen.vue'),
+        meta: {
+              thumb: ['首页', '产品', '速冻食品']
+            }
       },
       {
         path: 'pastry',
-        component: () => import('../views/eat/Pastry.vue')
+        component: () => import('../views/eat/Pastry.vue'),
+        meta: {
+              thumb: ['首页', '产品', '糕点系列']
+            }
       },
 
       //首页

@@ -58,14 +58,14 @@
                         <span>产品</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li class="one" @click="$router.push('/home/pastry')">
+                                <li class="one">
                                     糕点系列
                                 </li>
-                                <li @click="$router.push('/home/snack')">休闲食品</li>
-                                <li>节日食品</li>
-                                <li>面包主食</li>
-                                <li>坚果系列</li>
-                                <li>速冻食品</li>
+                                <li><a href="snack">休闲食品</a></li>
+                                <li><a href="festive">节日食品</a></li>
+                                <li><a href="bread">面包主食</a></li>
+                                <li><a href="nut">坚果系列</a></li>
+                                <li><a href="frozen">速冻食品</a></li>
                             </ul>
                         </div>
                     </li>
