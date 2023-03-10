@@ -13,8 +13,12 @@ const newsApi = {
   },
 
   /** 分页查询同一分类所有新闻 {xwfl_id,page,pagesize}*/
-  queryNewsByPage() {
+  queryNewsByPage(params) {
     let url = BMDURL + "/xwsj";
+    return myaxios.get(url, params)
+  },
+  queryDetail(params) {
+    let url = BMDURL + "/xwsj/detail";
     return myaxios.get(url, params)
   },
 
