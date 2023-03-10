@@ -2,7 +2,7 @@
     <div>
         <!-- 视频 -->
         <div class="shipin">
-            <video autoplay controls poster src="@/assets/video/shipin.mp4"></video>
+            <video autoplay muted poster src="@/assets/video/shipin.mp4"></video>
         </div>
         <!-- 版心 -->
         <div class="contain">

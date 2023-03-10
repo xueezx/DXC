@@ -5,7 +5,7 @@
     <span style="color: #ddb864">时间：{{ this.new.ctime }}</span>
     <div v-for="item in detail">
       <img :src="item.new_pic" alt="" />
-      <p>{{ item.pic_title }}</p>
+      <span>{{ item.pic_title }}</span>
       <p>{{ item.new_content }}</p>
     </div>
   </div>
@@ -53,6 +53,7 @@ export default {
   margin: 0 auto;
   background-color: #f9f4e4;
   text-align: center;
+  padding-bottom: 100px;
 
   > h2 {
     color: #c28f39;
@@ -60,6 +61,25 @@ export default {
     font-size: 30px;
     margin-bottom: 20px;
     padding-top: 50px;
+  }
+  > div:first-child {
+    margin-top: 50px;
+  }
+  > div {
+    > span {
+      display: block;
+      margin: 5px auto;
+    }
+    > img {
+      max-width: 800px;
+      margin-top: 30px;
+    }
+    > p {
+      margin: 30px auto 10px;
+      text-align: start;
+      width: 1000px;
+      text-indent: 2em;
+    }
   }
 }
 </style>
