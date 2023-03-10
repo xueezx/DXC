@@ -97,7 +97,7 @@ export default {
         xwfl_id: this.newsData.xwfl_id,
       }
       httpApi.newsApi.queryNewsByPage(params).then(res => {
-        // console.log('新闻列表', res)
+        console.log('新闻列表', res)
         this.news = res.data.data
       })
     },
@@ -118,6 +118,7 @@ export default {
   width: 1200px;
   margin: auto;
   padding-top: 20px;
+
   .wz {
     font-weight: normal;
     font-size: 14px;
