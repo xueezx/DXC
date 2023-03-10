@@ -162,12 +162,7 @@ export default {
         aboutNew() {
             // httpApi.newsApi.queryAboutNews({ keywords: this.keywords }).then(res => {
             // console.log('相关新闻', res)
-            this.$router.push({
-                name: '/about/',
-                params: {
-                    text: this.keywords
-                }
-            })
+            this.$router.push('/home/about/' + this.keywords)
             // })
         },
     },

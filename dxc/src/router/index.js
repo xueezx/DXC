@@ -16,7 +16,7 @@ const routes = [
     component: HomeView,
     children: [
       {
-        path: '/about/:text',
+        path: 'about/:text',
         name: 'about',
         component: () => import('../views/AboutView.vue')
       },

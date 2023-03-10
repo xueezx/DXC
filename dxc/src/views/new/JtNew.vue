@@ -29,9 +29,9 @@
                 </div>
             </div>
             <!-- 分页器 -->
-            <el-pagination style="margin: 10px" background :total="newsData.total" :page-size="newsData.pagesize"
+            <!-- <el-pagination style="margin: 10px" background :total="newsData.total" :page-size="newsData.pagesize"
                 :current-page="newsData.page" layout="->, total, prev, pager, next, jumper"
-                @current-change="changeCurrentPage"></el-pagination>
+                @current-change="changeCurrentPage"></el-pagination> -->
         </div>
     </div>
 </template>
@@ -71,6 +71,7 @@ export default {
                 xwfl_id: this.newsData.xwfl_id,
             }
             httpApi.newsApi.queryNewsByPage(params).then(res => {
+                console.log(params);
                 console.log('新闻列表', res)
                 this.news = res.data.data
             })
