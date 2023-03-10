@@ -24,10 +24,10 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{ item.title }}</a>
+                <a @click="$router.push(`/home/eat-detail/${item.id}`)">{{ item.title }}</a>
               </h1>
               <span>{{ item.detail }}</span>
-              <a href="eat-detail" class="d1">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -43,7 +43,7 @@
         <div class="xx2">
           <div class="xx2-1" v-for="(item,j) in snacks" :key="item.id">
             <div class="qjin">
-              <a href="#">请进</a>
+              <a @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
             <div class="xxtu">
               <img class="sp" style="height: 100%;" :src="pic1[j]" alt="" />
@@ -71,14 +71,14 @@
             <div class="text">
               <h1>{{item.title}}</h1>
               <p>{{item.texture}}</p>
-              <a class="go" href="#">请进</a>
+              <a class="go"  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
           </div>
         </div>
       </div>
       <div class="mianbao">
         <div class="tupian">
-          <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
+          <img class="gd1" src="../../assets/105744002a9c4270-4.jpg" alt="" />
           <span @click="$router.push('/home/bread')">了解更多</span>
         </div>
         <div class="gd2">
@@ -88,10 +88,10 @@
             </div>
             <div class="txt">
               <h1>
-                <a href="#">{{ item.title }}</a>
+                <a  @click="$router.push(`/home/eat-detail/${item.id}`)">{{ item.title }}</a>
               </h1>
               <span>{{ item.detail }}</span>
-              <a href="eat-detail" class="d1">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -101,13 +101,13 @@
       </div>
       <div class="jianguo">
         <div class="tupian">
-          <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
+          <img class="xx1" src="../../assets/11535404c5e8840e-9.jpg" alt="" />
           <span @click="$router.push('/home/nut')">了解更多</span>
         </div>
         <div class="xx2">
           <div class="xx2-1" v-for="(item,i) in nuts" :key="item.id">
             <div class="qjin">
-              <a href="#">请进</a>
+              <a  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
             <div class="xxtu">
               <img class="sp" style="height: 100%;" :src="pic4[i]" alt="" />
@@ -124,7 +124,7 @@
       </div>
       <div class="sudong">
         <div class="tupian">
-          <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
+          <img class="gd1" src="../../assets/105727431d17cb657-5.jpg" alt="" />
           <span @click="$router.push('/home/frozen')">了解更多</span>
         </div>
         <div class="jr">
@@ -135,7 +135,7 @@
             <div class="text">
               <h1>{{item.title}}</h1>
               <p>{{item.texture}}</p>
-              <a class="go" href="#">请进</a>
+              <a class="go"  @click="$router.push(`/home/eat-detail/${item.id}`)">请进</a>
             </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default {
       httpApi.eatApi.queryFoodsByPage(params).then((res) => {
         console.log(res);
         this.pastrys = res.data.data
-        console.log('糕点数据',this.pastrys )
+        console.log('糕点数据1',this.pastrys.id )
         let pic = this.pastrys
         for(let i=0;i<=pic.length;i++ ){
           this.pic.push((pic[i].pic).split('@',[1]))
@@ -276,6 +276,7 @@ export default {
     },
   },
   mounted() {
+    window.scrollTo(0, 0)
     this.queryAllPastry();
     this.queryAllSnack();
     this.queryAllFestive();
@@ -371,6 +372,7 @@ export default {
 
   a {
     color: #fff;
+    cursor: pointer;
   }
 }
 
@@ -394,6 +396,7 @@ export default {
   margin: 20px 40px 20px 0;
   border: 1px none;
   color: #fff;
+  cursor: pointer;
 }
 
 .d1:hover {
@@ -430,6 +433,7 @@ export default {
   border-radius: 50%;
   > a {
     color: #fff;
+    cursor: pointer;
   }
 }
 .qjin:hover {
@@ -503,6 +507,7 @@ export default {
         font-size: 30px;
         padding-top: 15px;
         margin-bottom: 15px;
+        cursor: pointer;
       }
       p {
         font-size: 14px;
@@ -519,6 +524,7 @@ export default {
         align-items: center;
         right: 135px;
         bottom: 90px;
+        cursor: pointer;
       }
     }
   }
