@@ -26,6 +26,37 @@ router.get('/xwfl', (req, resp) => {
 })
 
 /**
+ * 查询 新闻数据
+ * @param:
+ *   无
+ * @return:
+ *   {code:200, msg:'ok', data:[{}]}
+ */
+router.get('/xwsj/detail', (req, resp) => {
+  let { id } = req.query
+  // 表单验证
+  let schema = Joi.object({
+    id: Joi.number().required(), // cpfl_id必须是数字，必填
+  })
+  let { error, value } = schema.validate(req.query)
+  if (error) {
+    resp.send(Response.error(400, error))
+    return // 结束
+  }
+
+  // 执行查询业务
+  let sql = 'select * from dxc_xwsj where id=?'
+  pool.query(sql, [id], (error, result) => {
+    if (error) {
+      resp.send(Response.error(500, error))
+      throw error
+    }
+    resp.send(Response.ok(result))
+  })
+})
+
+
+/**
  * 分页查询 同一分类所有新闻 接口
  * @param:
  *   xwfl_id:      产品类型id

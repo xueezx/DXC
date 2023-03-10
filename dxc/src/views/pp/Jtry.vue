@@ -16,7 +16,7 @@
                     <div class="bg">
                         <div class="lbta">
                             <img class="lbtb" :src="item.pic" alt="">
-                            <span>{{item.title}}</span>
+                            <span>{{ item.title }}</span>
                         </div>
                     </div>
                 </el-carousel-item>
@@ -39,36 +39,34 @@
 <script>
 import httpApi from '../../http'
 export default {
-data() {
-    return {
-        topBanner: [],
-        honor:[]
-    }
-},
-
-
-methods: {
-    queryBanner() {
-        httpApi.brandApi.queryHonorTop().then(res=>{
-            console.log('加载页面上方轮播图',res);
-            this.topBanner=res.data.data
-        })
+    data() {
+        return {
+            topBanner: [],
+            honor: []
+        }
     },
-    queryHonor(){
-        httpApi.brandApi.queryHonor().then(res=>{
-            console.log('加载荣誉',res);
-            this.honor=res.data.data
-        })
+
+
+    methods: {
+        queryBanner() {
+            httpApi.brandApi.queryHonorTop().then(res => {
+                // console.log('加载页面上方轮播图', res);
+                this.topBanner = res.data.data
+            })
+        },
+        queryHonor() {
+            httpApi.brandApi.queryHonor().then(res => {
+                console.log('加载荣誉', res);
+                this.honor = res.data.data
+            })
+        }
+    },
+
+
+    mounted() {
+        this.queryBanner()
+        this.queryHonor()
     }
-},
-
-
-mounted(){
-    this.queryBanner()
-    this.queryHonor()
-}
-
-
 }
 </script>
 

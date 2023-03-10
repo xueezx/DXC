@@ -19,9 +19,10 @@ const routes = [
       {
         path: 'new',
         component: () => import('../views/New.vue'),
+        redirect: '/home/new/xwfl_id/1',
         children: [
           {
-            path: 'jtnew',
+            path: 'xwfl_id/1',
             component: () => import('../views/new/JtNew.vue'),
             children: [
               {
@@ -32,7 +33,7 @@ const routes = [
             ]
           },
           {
-            path: 'dfnew',
+            path: 'xwfl_id/2',
             component: () => import('../views/new/DfNew.vue'),
             children: [
               {
@@ -42,7 +43,7 @@ const routes = [
             ]
           },
           {
-            path: 'mtnew',
+            path: 'xwfl_id/3',
             component: () => import('../views/new/MtNew.vue'),
             children: [
               {
