@@ -38,12 +38,12 @@
         :key="item.id"
       >
         <div class="left2">
-          <img :src="item.avatar" alt="" />
+          <img :src="item.pic" alt="" />
         </div>
         <div class="right2">
           <h4>{{ item.title }}</h4>
           <p>{{ item.time }}</p>
-          <span>{{ item.detail }}</span>
+          <span>{{ item.content }}</span>
           <div class="btn">请进</div>
         </div>
       </div>
@@ -59,35 +59,6 @@
       @current-change="changeCurrentPage"
     ></el-pagination>
   </div>
-
-  <div class="bt1">
-    <img src="../../assets/jtnew.jpg" alt="" />
-  </div>
-  <router-view />
-  <div class="hos" v-show="hideOrShow">
-    <!-- 分页遍历 -->
-    <!-- $router.push('/home/new/jtnew/jt/' + item.id) -->
-    <div class="jump2" v-for="item in news" :key="item.id">
-      <div class="left2">
-        <img :src="item.pic" alt="" />
-      </div>
-      <div class="right2">
-        <h4>{{ item.title }}</h4>
-        <p>{{ item.time }}</p>
-        <span>{{ item.content }}</span>
-        <div class="btn" @click="$router.push('/home/new/jtnew/jt/' + item.id)">
-          请进
-        </div>
-      </div>
-    </div>
-  </div>
-  <el-pagination
-    style="background-color: #ceaf59"
-    background
-    layout="prev, pager, next"
-    :total="1000"
-  >
-  </el-pagination>
 </template>
 
 <script>
@@ -97,33 +68,64 @@ export default {
   data() {
     return {
       hideOrShow: true,
-      news: [],
-      id: 1,
-      page: 1,
-      pagesize: 10,
+      news: [
+        // {
+        //     id: 1,
+        //     avatar: 'http://www.daoxiangcun.cn/UpLoadFile/Images/2023/2/6/17237326c438096-a_Cut285180.jpg',
+        //     title: '稻香村荣登新国货品牌百强，获“最受消费者欢迎新国货品牌”大奖。',
+        //     time: 'Feb 06,2023',
+        //     detail: '近日，由全球知名的新经济产业第三方数据挖掘和分析机构iiMedia Research（艾媒咨询）主办的艾媒新消费大讲堂第6期暨2022年中国新国货品牌“金榜题名”颁奖典礼成功举办并揭晓获奖名单。稻香村荣获“2022年中国最受消费者欢迎新国货品牌”大奖，并入'
+        // },
+        // {
+        //     id: 2,
+        //     avatar: 'http://www.daoxiangcun.cn/UpLoadFile/Images/2022/9/28/1118457091350d3c9-7_Cut285180.jpg',
+        //     title: '稻香村荣登新国货品牌百强，获“最受消费者欢迎新国货品牌”大奖。',
+        //     time: 'Feb 07,2023',
+        //     detail: '近日，由全球知名的新经济产业第三方数据挖掘和分析机构iiMedia Research（艾媒咨询）主办的艾媒新消费大讲堂第6期暨2022年中国新国货品牌“金榜题名”颁奖典礼成功举办并揭晓获奖名单。稻香村荣获“2022年中国最受消费者欢迎新国货品牌”大奖，并入'
+        // },
+        // {
+        //     id: 3,
+        //     avatar: 'http://www.daoxiangcun.cn/UpLoadFile/Images/2023/2/6/17237326c438096-a_Cut285180.jpg',
+        //     title: '稻香村荣登新国货品牌百强，获“最受消费者欢迎新国货品牌”大奖。',
+        //     time: 'Feb 08,2023',
+        //     detail: '近日，由全球知名的新经济产业第三方数据挖掘和分析机构iiMedia Research（艾媒咨询）主办的艾媒新消费大讲堂第6期暨2022年中国新国货品牌“金榜题名”颁奖典礼成功举办并揭晓获奖名单。稻香村荣获“2022年中国最受消费者欢迎新国货品牌”大奖，并入'
+        // },
+      ],
+      newsData: {
+        // 保存电影数据
+        page: 1, // 当前页码
+        pagesize: 10, // 每页多少条
+        total: 999, // 总条目数
+        xwfl_id: 1, //新闻类型id
+        result: [], // 电影列表
+      },
     }
   },
   methods: {
     detail(id) {
-      this.$router.push('/home/new/jtnew/jt/' + id)
+      this.$router.push('/home/new/xwfl_id/1/jt/' + id)
       if (id) {
         this.hideOrShow = false
       }
     },
-    init() {
+    changeCurrentPage(page) {
+      this.newsData.page = page // 修改当前页
+      this.queryMovies() // 重新加载当前页的新闻列表
+    },
+    upload() {
       let params = {
-        xwfl_id: this.id,
-        page: this.page,
-        pagesize: this.pagesize,
+        page: this.newsData.page,
+        pagesize: this.newsData.pagesize,
+        xwfl_id: this.newsData.xwfl_id,
       }
       httpApi.newsApi.queryNewsByPage(params).then(res => {
-        console.log(res)
+        console.log('新闻列表', res)
         this.news = res.data.data
       })
     },
   },
   mounted() {
-    this.init()
+    this.upload()
   },
 }
 </script>
