@@ -50,11 +50,11 @@
             <!-- 轮播图 -->
             <div class="lbt">
                 <el-carousel :interval="4000" type="card" height="350px">
-                    <el-carousel-item v-for="item in 6" :key="item">
+                    <el-carousel-item v-for="item in honor" :key="item.id">
                         <div class="bg">
                             <div class="lbta">
-                                <img class="lbtb" src="@/assets/pp/143574026776ab42-6_cen315315.jpg" alt="">
-                                <span>面包技术比赛金奖</span>
+                                <img class="lbtb" :src=item.pic alt="">
+                                <span>{{ item.title }}</span>
                             </div>
                         </div>
                     </el-carousel-item>
@@ -104,7 +104,8 @@ import httpApi from '@/http';
 export default {
     data() {
         return {
-            cc: []
+            cc: [],
+            honor: []
         }
     },
     methods: {
@@ -113,10 +114,17 @@ export default {
                 console.log('传承人', res);
                 this.cc = res.data.data.splice(3, 3)
             })
+        },
+        queryHonor() {
+            httpApi.brandApi.queryHonor().then(res => {
+                console.log('加载荣誉', res);
+                this.honor = res.data.data
+            })
         }
     },
     mounted() {
         this.upload()
+        this.queryHonor()
     }
 }
 </script>
@@ -177,13 +185,15 @@ export default {
 
                 p {
                     margin-bottom: 20px;
-                    font-size: 14px;
+                    font-size: 23px;
                     color: #664f10;
-                    line-height: 22px;
+                    line-height: 26px;
                 }
 
                 img {
-                    width: 250px;
+                    width: 260px;
+                    border-radius: 6px;
+                    display: block;
                 }
             }
         }

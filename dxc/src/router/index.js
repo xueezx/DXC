@@ -29,7 +29,6 @@ const routes = [
                 path: 'jt/:id',
                 component: () => import('../views/new/DetailNew.vue')
               }
-
             ]
           },
           {

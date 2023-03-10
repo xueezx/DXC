@@ -91,11 +91,12 @@ export default {
             let params = {
                 page: this.newsData.page,
                 pagesize: this.newsData.pagesize,
-                xwfl_id: this.$router.path
+                xwfl_id: this.$route.path.id
             }
-            httpApi.newsApi.queryNewsByPage(params).then(res => {
-                console.log('新闻列表', res);
-            })
+            console.log(params);
+            // httpApi.newsApi.queryNewsByPage(params).then(res => {
+            //     console.log('新闻列表', res);
+            // })
         }
     },
     mounted() {
@@ -114,7 +115,8 @@ export default {
     width: 1200px;
     margin: auto;
     padding-top: 20px;
-    .wz{
+
+    .wz {
         font-weight: normal;
         font-size: 14px;
         color: #333;

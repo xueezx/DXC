@@ -35,7 +35,7 @@
                     </div>
                     <div class="line"></div>
                 </div>
-                <div class="right">
+                <!-- <div class="right">
                     <div class="line2"></div>
                     <div class="round2">
                         <div></div>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="line2-2"></div>
-                </div>
+                </div> -->
             </div>
             <div class="linelast"></div>
             <div class="timeBottom">
@@ -74,8 +74,9 @@ export default {
     methods: {
         upload() {
             httpApi.brandApi.queryAllBrand().then(res => {
-                console.log('全部历史', res);
+                // console.log('全部历史', res);
                 this.ls = res.data.data
+
             })
         }
     },
@@ -169,6 +170,7 @@ export default {
         }
 
         .total {
+
             .left {
                 height: 200px;
                 display: flex;
@@ -275,111 +277,130 @@ export default {
                 }
             }
 
-            .right {
-                height: 200px;
+            &:nth-child(2n+1) {
                 display: flex;
-                flex-direction: row;
                 position: relative;
 
-                .line2 {
-                    width: 3px;
-                    height: 176px;
-                    background-color: #ceaf59;
-                    transform: translateX(-50%);
-                    display: inline-block;
-                    position: absolute;
-                    left: 600px;
-                    margin-top: -76px;
-                }
-
-                .round2 {
-                    width: 20px;
-                    height: 20px;
-                    border: 3px solid #ceaf59;
-                    border-radius: 50%;
-                    background-color: white;
-                    margin-top: 100px;
-                    transform: translateX(-50%);
-                    display: inline-block;
-                    position: absolute;
-                    left: 600px;
-
-
-                    >div {
-                        width: 10px;
-                        height: 10px;
-                        background-color: red;
-                        border-radius: 50%;
-                        display: inline-block;
-                        margin: 5px;
-                    }
-                }
-
-                .line2-2 {
-                    width: 30px;
-                    height: 3px;
-                    background-color: #ceaf59;
-                    display: inline-block;
-                    position: absolute;
-                    left: 612px;
-                    top: 110px;
-                }
-
-                .kuang2 {
-                    display: block;
-                    width: 500px;
-                    height: 200px;
-                    background-color: #FFFFFF;
-                    position: absolute;
-                    left: 642px;
+                .kuang {
                     display: flex;
+                    flex-direction: row-reverse;
+                    position: absolute;
+                    left: 640px;
 
-                    .r1 {
-                        width: 300px;
-                        padding: 30px 0 0 20px;
-                        position: relative;
-
-                        >span {
-                            display: block;
-                            color: #48463b;
-                            font-size: 19px;
-                            margin-left: 20px;
-                        }
-
-                        >img {
-                            width: 92%;
-                            position: absolute;
-                            bottom: 10px;
-                        }
-                    }
-
-                    .r2 {
-                        width: 200px;
-                        height: 200px;
-                        position: relative;
-
-                        >img {
-                            width: 100%;
-                            height: 100%;
-                            display: block;
-                        }
-
-                        >div {
-                            border: 2px solid black;
-                            background-color: rgba(0, 0, 0, 0.25);
-                            position: absolute;
-                            left: 0;
-                            right: 0;
-                            top: 0;
-                            bottom: 0;
-                            text-align: center;
-                            line-height: 200px;
-                            font-size: 50px;
-                            color: #FFFFFF;
-                        }
-                    }
                 }
+
+                .line1-2 {
+                    position: absolute;
+                    left: 610px;
+                }
+
             }
+
+            // .right {
+            //     height: 200px;
+            //     display: flex;
+            //     flex-direction: row;
+            //     position: relative;
+
+            //     .line2 {
+            //         width: 3px;
+            //         height: 176px;
+            //         background-color: #ceaf59;
+            //         transform: translateX(-50%);
+            //         display: inline-block;
+            //         position: absolute;
+            //         left: 600px;
+            //         margin-top: -76px;
+            //     }
+
+            //     .round2 {
+            //         width: 20px;
+            //         height: 20px;
+            //         border: 3px solid #ceaf59;
+            //         border-radius: 50%;
+            //         background-color: white;
+            //         margin-top: 100px;
+            //         transform: translateX(-50%);
+            //         display: inline-block;
+            //         position: absolute;
+            //         left: 600px;
+
+
+            //         >div {
+            //             width: 10px;
+            //             height: 10px;
+            //             background-color: red;
+            //             border-radius: 50%;
+            //             display: inline-block;
+            //             margin: 5px;
+            //         }
+            //     }
+
+            //     .line2-2 {
+            //         width: 30px;
+            //         height: 3px;
+            //         background-color: #ceaf59;
+            //         display: inline-block;
+            //         position: absolute;
+            //         left: 612px;
+            //         top: 110px;
+            //     }
+
+            //     .kuang2 {
+            //         display: block;
+            //         width: 500px;
+            //         height: 200px;
+            //         background-color: #FFFFFF;
+            //         position: absolute;
+            //         left: 642px;
+            //         display: flex;
+
+            //         .r1 {
+            //             width: 300px;
+            //             padding: 30px 0 0 20px;
+            //             position: relative;
+
+            //             >span {
+            //                 display: block;
+            //                 color: #48463b;
+            //                 font-size: 19px;
+            //                 margin-left: 20px;
+            //             }
+
+            //             >img {
+            //                 width: 92%;
+            //                 position: absolute;
+            //                 bottom: 10px;
+            //             }
+            //         }
+
+            //         .r2 {
+            //             width: 200px;
+            //             height: 200px;
+            //             position: relative;
+
+            //             >img {
+            //                 width: 100%;
+            //                 height: 100%;
+            //                 display: block;
+            //             }
+
+            //             >div {
+            //                 border: 2px solid black;
+            //                 background-color: rgba(0, 0, 0, 0.25);
+            //                 position: absolute;
+            //                 left: 0;
+            //                 right: 0;
+            //                 top: 0;
+            //                 bottom: 0;
+            //                 text-align: center;
+            //                 line-height: 200px;
+            //                 font-size: 50px;
+            //                 color: #FFFFFF;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 }

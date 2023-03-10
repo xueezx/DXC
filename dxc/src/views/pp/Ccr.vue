@@ -37,7 +37,7 @@ export default {
     methods: {
         upload() {
             httpApi.brandApi.queryAllInheritor().then(res => {
-                console.log('传承人', res);
+                // console.log('传承人', res);
                 this.cc = res.data.data
             })
         }
