@@ -21,14 +21,14 @@
                             </ul>
                         </div>
                     </li>
-                    <li @click="$router.push('/home/new/jtnew')">
+                    <li @click="$router.push('/home/new')">
                         <img src="../assets/6.png" alt="">
                         <span>新闻</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li @click="$router.push('/home/new/jtnew')" class="one">集团新闻</li>
-                                <li @click="$router.push('/home/new/dfnew')">地方动态</li>
-                                <li @click="$router.push('/home/new/mtnew')">媒体报道</li>
+                                <li @click="$router.push('/home/new/xwfl_id/1')" class="one">集团新闻</li>
+                                <li @click="$router.push('/home/new/xwfl_id/2')">地方动态</li>
+                                <li @click="$router.push('/home/new/xwfl_id/3')">媒体报道</li>
                             </ul>
                         </div>
                     </li>
@@ -146,8 +146,6 @@
 </template>
 
 <script>
-
-
 </script>
 <style scoped lang="scss">
 .home {

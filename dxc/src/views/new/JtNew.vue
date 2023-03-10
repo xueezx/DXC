@@ -2,17 +2,24 @@
   <div class="jt">
     <!-- 面包屑导航 -->
     <div class="breadcrumb" style="min-width: 320px">
-      <span style="margin-left: 20px; line-height: 100%">您现在的位置：</span>
+      <span style="margin-left: 20px; line-height: 100%" class="wz"
+        >您现在的位置：</span
+      >
       <el-breadcrumb
         style="margin: 0 0 0 20px; display: inline-block"
         separator-class="el-icon-arrow-right"
       >
-        <el-breadcrumb-item style="text-decoration: none" :to="{ path: '/' }"
+        <el-breadcrumb-item
+          style="text-decoration: none"
+          :to="{ path: '/' }"
+          class="wz"
           >首页</el-breadcrumb-item
         >
-        <el-breadcrumb-item>新闻</el-breadcrumb-item>
+        <el-breadcrumb-item class="wz">新闻</el-breadcrumb-item>
         <el-breadcrumb-item
-          ><span style="color: red">集团新闻</span></el-breadcrumb-item
+          ><span style="color: red" class="wz"
+            >集团新闻</span
+          ></el-breadcrumb-item
         >
       </el-breadcrumb>
     </div>
@@ -24,31 +31,63 @@
     <div class="hos" v-show="hideOrShow">
       <!-- 分页遍历 -->
       <!-- $router.push('/home/new/jtnew/jt/' + item.id) -->
-      <div class="jump2" v-for="item in news" :key="item.id">
+      <div
+        @click="detail(item.id)"
+        class="jump2"
+        v-for="item in news"
+        :key="item.id"
+      >
         <div class="left2">
-          <img :src="item.pic" alt="" />
+          <img :src="item.avatar" alt="" />
         </div>
         <div class="right2">
           <h4>{{ item.title }}</h4>
           <p>{{ item.time }}</p>
-          <span>{{ item.content }}</span>
-          <div
-            class="btn"
-            @click="$router.push('/home/new/jtnew/jt/' + item.id)"
-          >
-            请进
-          </div>
+          <span>{{ item.detail }}</span>
+          <div class="btn">请进</div>
         </div>
       </div>
     </div>
+    <!-- 分页器 -->
     <el-pagination
-      style="background-color: #ceaf59"
+      style="margin: 10px"
       background
-      layout="prev, pager, next"
-      :total="1000"
-    >
-    </el-pagination>
+      :total="newsData.total"
+      :page-size="newsData.pagesize"
+      :current-page="newsData.page"
+      layout="->, total, prev, pager, next, jumper"
+      @current-change="changeCurrentPage"
+    ></el-pagination>
   </div>
+
+  <div class="bt1">
+    <img src="../../assets/jtnew.jpg" alt="" />
+  </div>
+  <router-view />
+  <div class="hos" v-show="hideOrShow">
+    <!-- 分页遍历 -->
+    <!-- $router.push('/home/new/jtnew/jt/' + item.id) -->
+    <div class="jump2" v-for="item in news" :key="item.id">
+      <div class="left2">
+        <img :src="item.pic" alt="" />
+      </div>
+      <div class="right2">
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.time }}</p>
+        <span>{{ item.content }}</span>
+        <div class="btn" @click="$router.push('/home/new/jtnew/jt/' + item.id)">
+          请进
+        </div>
+      </div>
+    </div>
+  </div>
+  <el-pagination
+    style="background-color: #ceaf59"
+    background
+    layout="prev, pager, next"
+    :total="1000"
+  >
+  </el-pagination>
 </template>
 
 <script>
@@ -99,6 +138,11 @@ export default {
   width: 1200px;
   margin: auto;
   padding-top: 20px;
+  .wz {
+    font-weight: normal;
+    font-size: 14px;
+    color: #333;
+  }
 }
 
 .bt1 {

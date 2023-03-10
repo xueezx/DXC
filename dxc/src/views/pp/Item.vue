@@ -18,11 +18,25 @@
 
             <div class="last">
                 <ul>
-                    <li v-for="item in 3">
+                    <li>
                         <p>
                             2022中国品牌价值评价信息发布，稻香村集团品牌价值182.77亿元。
                         </p>
-                        <img src="@/assets/pp/95025642e1f1123b-a_cut194194.jpg" alt="">
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2022/9/28/2_cut600380.jpg" alt="">
+                    </li>
+                    <li>
+                        <p>
+                            稻香村荣登新国货品牌百强，获“最受消费者欢迎新国货品牌”大奖。
+                        </p>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2023/2/6/17237326c438096-a_Cut285180.jpg"
+                            alt="">
+                    </li>
+                    <li>
+                        <p>
+                            稻香村（苏州）携手梦幻西游 推出中秋月饼联名礼盒。
+                        </p>
+                        <img src="http://www.daoxiangcun.cn/UpLoadFile/Images/2022/9/28/1118457091350d3c9-7_Cut285180.jpg"
+                            alt="">
                     </li>
                 </ul>
             </div>
@@ -55,9 +69,9 @@
             </div>
             <div class="last">
                 <ul>
-                    <li v-for="item in 4">
-                        <img src="@/assets/pp/11349417e5717d55-a_cut500317.jpg" alt="">
-                        <span>第二三代传承人</span>
+                    <li v-for="item in cc" :key="item.id">
+                        <img :src=item.pic alt="">
+                        <span>{{ item.title }}</span>
                     </li>
                 </ul>
             </div>
@@ -86,8 +100,24 @@
 </template>
 
 <script>
+import httpApi from '@/http';
 export default {
-
+    data() {
+        return {
+            cc: []
+        }
+    },
+    methods: {
+        upload() {
+            httpApi.brandApi.queryAllInheritor().then(res => {
+                console.log('传承人', res);
+                this.cc = res.data.data.splice(3, 3)
+            })
+        }
+    },
+    mounted() {
+        this.upload()
+    }
 }
 </script>
 
@@ -135,7 +165,8 @@ export default {
 
         ul {
             display: flex;
-            margin: 0 150px;
+            margin: 0 50px;
+            padding-top: 50px;
             height: 700px;
             align-items: center;
             justify-content: space-between;
@@ -149,6 +180,10 @@ export default {
                     font-size: 14px;
                     color: #664f10;
                     line-height: 22px;
+                }
+
+                img {
+                    width: 250px;
                 }
             }
         }

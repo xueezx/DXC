@@ -4,64 +4,28 @@
     <div class="main">
       <div class="mianbaoxie">
         <!-- 面包屑导航 -->
-      <el-breadcrumb class="bc" separator-class="el-icon-arrow-right">
-        <p>您现在的位置:</p>
-        <el-breadcrumb-item v-for="item in $route.meta.thumb" :key="item">{{
-          item
-        }}</el-breadcrumb-item>
-      </el-breadcrumb>
+        <el-breadcrumb class="bc" separator-class="el-icon-arrow-right">
+          <p>您现在的位置:</p>
+          <el-breadcrumb-item v-for="item in $route.meta.thumb" :key="item">{{
+            item
+          }}</el-breadcrumb-item>
+        </el-breadcrumb>
       </div>
       <div class="gaodian">
         <div class="tupian">
           <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
-          <span  @click="$router.push('/home/pastry')">了解更多</span>
+          <span @click="$router.push('/home/pastry')">了解更多</span>
         </div>
         <div class="gd2">
-          <div class="gd2-2">
+          <div class="gd2-2" v-for="item in pastrys" :key="item.id">
             <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
+              <img src="" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+                <a href="#">{{ item.title }}</a>
               </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
-              <a href="#" class="d1">请进</a>
-            </div>
-            <div class="logo">
-              <img src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="gd2-2">
-            <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
-            </div>
-            <div class="txt">
-              <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
-              </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
-              <a href="#" class="d1">请进</a>
-            </div>
-            <div class="logo">
-              <img src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="gd2-2">
-            <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
-            </div>
-            <div class="txt">
-              <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
-              </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
+              <span>{{ item.detail }}</span>
               <a href="#" class="d1">请进</a>
             </div>
             <div class="logo">
@@ -73,7 +37,7 @@
       <div class="xxshipin">
         <div class="tupian">
           <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
-          <span>了解更多</span>
+          <span @click="$router.push('/home/snack')">了解更多</span>
         </div>
         <div class="xx2">
           <div class="xx2-1">
@@ -81,7 +45,11 @@
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/1206536a45853d5-0_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/1206536a45853d5-0_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -102,7 +70,11 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/13104325014bc9a0d-1_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/13104325014bc9a0d-1_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
@@ -111,7 +83,11 @@
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/139562825f993d13-6_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -132,7 +108,11 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/133956535abf3882d-2_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/133956535abf3882d-2_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
@@ -141,7 +121,7 @@
       <div class="jrshipin">
         <div class="tupian">
           <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
-          <span>了解更多</span>
+          <span @click="$router.push('/home/festive')">了解更多</span>
         </div>
         <div class="jr">
           <div class="jr1">
@@ -169,7 +149,7 @@
       <div class="mianbao">
         <div class="tupian">
           <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
-          <span>了解更多</span>
+          <span @click="$router.push('/home/bread')">了解更多</span>
         </div>
         <div class="gd2">
           <div class="gd2-2">
@@ -228,7 +208,7 @@
       <div class="jianguo">
         <div class="tupian">
           <img class="xx1" src="../../assets/1056453111ce0f3d3-8.jpg" alt="" />
-          <span>了解更多</span>
+          <span @click="$router.push('/home/nut')">了解更多</span>
         </div>
         <div class="xx2">
           <div class="xx2-1">
@@ -236,7 +216,11 @@
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/1206536a45853d5-0_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/1206536a45853d5-0_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -257,7 +241,11 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/13104325014bc9a0d-1_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/13104325014bc9a0d-1_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
@@ -266,7 +254,11 @@
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/139562825f993d13-6_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/139562825f993d13-6_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
@@ -287,7 +279,11 @@
               </p>
             </div>
             <div class="xxtu">
-              <img class="sp" src="../../assets/133956535abf3882d-2_cut300260.jpg" alt="" />
+              <img
+                class="sp"
+                src="../../assets/133956535abf3882d-2_cut300260.jpg"
+                alt=""
+              />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
@@ -296,7 +292,7 @@
       <div class="sudong">
         <div class="tupian">
           <img class="gd1" src="../../assets/1056561199b8940eb-b.jpg" alt="" />
-          <span>了解更多</span>
+          <span @click="$router.push('/home/frozen')">了解更多</span>
         </div>
         <div class="jr">
           <div class="jr1">
@@ -326,7 +322,58 @@
 </template>
 
 <script>
-export default {};
+import httpApi from "@/http";
+export default {
+  data() {
+    return {
+      pstrysData: {
+        page: 1,
+        pagesize: 3,
+      },
+      pastrys: [],
+      breads: [],
+      festives: [],
+      frozens: [],
+      nuts: [],
+      snacks: [],
+      a: [],
+      pic: {},
+    };
+  },
+  methods: {
+    queryAllPastry() {
+      let params = {
+        cplx_id: 1,
+        page: this.pstrysData.page,
+        pagesize: this.pstrysData.pagesize,
+      };
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.pastrys = res.data.data;
+        let p = this.pastrys.pic
+        console.log(p);
+        //       for(var i =0;i<=p.length;i++){
+        //         console.log(p[i].pic)
+        //         this.a.push(p[i].pic)
+        // console.log(this.a)
+        //       }
+        //       let p1=a.split('@',[0])
+        //       // let p2=p1.charAt(0)
+        //       console.log(p1+'图片');
+
+        // let c = [];
+        // p.forEach((item) => {
+        //   let a = item.split('@');
+        //   c.push(a);
+        //   console.log(c);
+        // });
+      });
+    },
+  },
+  mounted() {
+    this.queryAllPastry();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -365,6 +412,7 @@ export default {};
     color: #ceaf59;
     font-size: 14px;
     margin-top: -34px;
+    cursor: pointer;
   }
 
   img {
@@ -454,109 +502,108 @@ export default {};
   height: 520px;
   display: block;
   position: relative;
-
 }
 .qjin {
-    width: 42px;
-    line-height: 42px;
-    text-align: center;
-    align-items: center;
-    background: #bfa764;
-    position: absolute;
-    margin-left: 129px;
-    top: 239px;
-    border-radius: 50%;
-    > a {
-      color: #fff;
-    }
+  width: 42px;
+  line-height: 42px;
+  text-align: center;
+  align-items: center;
+  background: #bfa764;
+  position: absolute;
+  margin-left: 129px;
+  top: 239px;
+  border-radius: 50%;
+  > a {
+    color: #fff;
   }
-  .qjin:hover {
-    background: red;
-  }
+}
+.qjin:hover {
+  background: red;
+}
 
-  .xxtu {
+.xxtu {
+  width: 100%;
+  height: 260px;
+
+  .sp {
     width: 100%;
-    height: 260px;
+  }
+}
 
-    .sp {
-      width: 100%;
-    }
+.xxzi {
+  width: 300px;
+  height: 260px;
+  background-color: #f9f4e4;
+  display: block;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #bfa764;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #b59846;
+    padding-top: 65px;
+    padding-bottom: 15px;
   }
 
-  .xxzi {
-    width: 300px;
-    height: 260px;
-    background-color: #f9f4e4;
+  p {
+    color: #b59846;
+    font-size: 12px;
     display: block;
-
-    h2 {
-      text-align: center;
-      font-size: 24px;
-      color: #bfa764;
-      width: 80%;
-      margin: 0 auto;
-      border-bottom: 1px solid #b59846;
-      padding-top: 65px;
-      padding-bottom: 15px;
-    }
-
-    p {
-      color: #b59846;
-      font-size: 12px;
-      display: block;
-      width: 80%;
-      margin: 15px auto 0;
-      line-height: 18px;
-    }
+    width: 80%;
+    margin: 15px auto 0;
+    line-height: 18px;
   }
+}
 .jrshipin {
   width: 100%;
 }
 .jr {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    .jr1 {
-      width: 585px;
-      height: 585px;
-      position: relative;
-      .tt1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .jr1 {
+    width: 585px;
+    height: 585px;
+    position: relative;
+    .tt1 {
+      width: 100%;
+      img {
         width: 100%;
-        img {
-          width: 100%;
-        }
       }
-      .text {
-        width: 292px;
-        height: 240px;
-        color: #b59846;
-        background: #fff;
+    }
+    .text {
+      width: 292px;
+      height: 240px;
+      color: #b59846;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        padding-top: 15px;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 14px;
+        padding: 0 30px;
+      }
+      .go {
+        width: 44px;
+        line-height: 44px;
+        background: #bfa764;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
         position: absolute;
-        right: 0;
-        bottom: 0;
-        h1 {
-          text-align: center;
-          font-size: 30px;
-          padding-top: 15px;
-          margin-bottom: 15px;
-        }
-        p {
-          font-size: 14px;
-          padding: 0 30px;
-        }
-        .go {
-          width: 44px;
-          line-height: 44px;
-          background: #bfa764;
-          color: #fff;
-          text-align: center;
-          border-radius: 50%;
-          position: absolute;
-          align-items: center;
-          right: 135px;
-          bottom: 90px;
-        }
+        align-items: center;
+        right: 135px;
+        bottom: 90px;
       }
     }
   }
+}
 </style>
