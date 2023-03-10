@@ -347,12 +347,14 @@ div {
                                 color: #968051;
                                 margin-top: 5px;
                                 line-height: 22px;
+                                font-size: 14px;
                             }
 
                             >.jianjie {
                                 color: #333333;
                                 line-height: 18px;
                                 margin-bottom: 22px;
+                                font-size: 12px;
                             }
 
                             >.btn {
