@@ -37,7 +37,7 @@ export default {
         },
         searchNew(id) {
             console.log(id);
-            this.$router.push('/home/new/xwfl_id/'+id)
+            this.$router.push('/home/new/xwfl_id/' + id)
         }
     },
     mounted() {

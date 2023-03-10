@@ -26,10 +26,10 @@
 
 
         <div class="cards">
-            <div class="sl" v-for="item in honor" :key="item.id">
+            <div class="sl" v-for="item in 8" :key="item">
                 <div class="card">
-                    <img :src=item.pic alt="">
-                    <span>{{ item.title }}</span>
+                    <img src="@/assets/pp/143574026776ab42-6_cen315315.jpg" alt="">
+                    <span>面包技术比赛金奖</span>
                 </div>
             </div>
         </div>
@@ -67,8 +67,6 @@ export default {
         this.queryBanner()
         this.queryHonor()
     }
-
-
 }
 </script>
 
