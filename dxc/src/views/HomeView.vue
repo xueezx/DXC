@@ -3,12 +3,12 @@
         <!-- 头部导航栏 -->
         <div class="nav">
             <div class="nav-left">
-                <img src="../assets/1.png" alt="">
+                <img src="../assets/1.png" alt="" />
             </div>
             <div class="nav-center">
                 <ul>
                     <li @click="$router.push('/home/me/introduction')">
-                        <img src="../assets/7.png" alt="">
+                        <img src="../assets/7.png" alt="" />
                         <span>我们</span>
                         <div class="nav-center-yc">
                             <ul>
@@ -22,11 +22,13 @@
                         </div>
                     </li>
                     <li @click="$router.push('/home/new')">
-                        <img src="../assets/6.png" alt="">
+                        <img src="../assets/6.png" alt="" />
                         <span>新闻</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li @click="$router.push('/home/new/xwfl_id/1')" class="one">集团新闻</li>
+                                <li @click="$router.push('/home/new/xwfl_id/1')" class="one">
+                                    集团新闻
+                                </li>
                                 <li @click="$router.push('/home/new/xwfl_id/2')">地方动态</li>
                                 <li @click="$router.push('/home/new/xwfl_id/3')">媒体报道</li>
                             </ul>
@@ -34,15 +36,17 @@
                     </li>
                     <li @click="$router.push('/home/index')">
                         <div class="dxc">
-                            <img src="../assets/2.png" alt="">
+                            <img src="../assets/2.png" alt="" />
                         </div>
                     </li>
                     <li @click="$router.push('/home/pp')">
-                        <img src="../assets/4.png" alt="">
+                        <img src="../assets/4.png" alt="" />
                         <span>品牌</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li class="one" @click="$router.push('/home/pp/ppls')">品牌历史</li>
+                                <li class="one" @click="$router.push('/home/pp/ppls')">
+                                    品牌历史
+                                </li>
                                 <li @click="$router.push('/home/pp/jtry')">品牌荣誉</li>
                                 <li @click="$router.push('/home/pp/ccr')">传承人</li>
                                 <li @click="$router.push('/home/pp/whhd')">文化活动</li>
@@ -50,11 +54,13 @@
                         </div>
                     </li>
                     <li @click="$router.push('/home/eat')">
-                        <img src="../assets/3.png" alt="">
+                        <img src="../assets/3.png" alt="" />
                         <span>产品</span>
                         <div class="nav-center-yc">
                             <ul>
-                                <li class="one" @click="$router.push('/home/pastry')">糕点系列</li>
+                                <li class="one" @click="$router.push('/home/pastry')">
+                                    糕点系列
+                                </li>
                                 <li @click="$router.push('/home/snack')">休闲食品</li>
                                 <li>节日食品</li>
                                 <li>面包主食</li>
@@ -66,7 +72,7 @@
                 </ul>
             </div>
             <div class="nav-right">
-                <el-input placeholder="请输入查询新闻关键字" v-model="input" class="input-with-select">
+                <el-input placeholder="请输入查询新闻关键字" v-model="keywords" class="input-with-select">
                     <el-button @click="aboutNew" slot="append" icon="el-icon-search"></el-button>
                 </el-input>
             </div>
@@ -113,29 +119,28 @@
         <!-- 脚本 -->
         <div class="nav-foot">
             <div class="nav-one">
-                <img src="../assets/erweima.jpg" alt="">
+                <img src="../assets/erweima.jpg" alt="" />
             </div>
             <div class="nav-two">
                 <p>Copyright 2012 - 2023 All rights reserved</p>
                 <p>北京苏稻食品工业有限公司版权所有京ICP备13026984号-1</p>
             </div>
             <div class="nav-photo">
-                <img src="../assets/5.jpg" alt="">
+                <img src="../assets/5.jpg" alt="" />
             </div>
             <div class="nav-last">
                 <div class="sss">
                     <div class="s1">
-                        <img src="../assets/xinxi.jpg" alt="">
-                        <p>bd@daoxiangcun.cn </p>
+                        <img src="../assets/xinxi.jpg" alt="" />
+                        <p>bd@daoxiangcun.cn</p>
                     </div>
                     <div class="s2">
-                        <img src="../assets/dianhua.png" alt="">
+                        <img src="../assets/dianhua.png" alt="" />
                         <p>400-600-1773</p>
                     </div>
                 </div>
                 <div class="wz">
-                    <span>网站声明</span> |
-                    <span>招贤纳士</span> |
+                    <span>网站声明</span> | <span>招贤纳士</span> |
                     <span>意见反馈</span> |
                     <span>联系我们</span>
                 </div>
@@ -143,26 +148,23 @@
         </div>
     </div>
 </template>
-
+  
 <script>
 import httpApi from '@/http'
 export default {
     data() {
         return {
-            input: '',
-            select: ''
+            keywords: '',
+            select: '',
         }
     },
     methods: {
         aboutNew() {
-            let params = this.input
-            httpApi.newsApi.queryAboutNews(params).then(res => {
-                console.log('相关新闻', res);
-                console.log(params);
-                this.input = ''
+            httpApi.newsApi.queryAboutNews({ keywords: this.keywords }).then(res => {
+                console.log('相关新闻', res)
             })
-        }
-    }
+        },
+    },
 }
 </script>
 <style scoped lang="scss">
@@ -179,13 +181,13 @@ export default {
         display: flex;
         align-items: center;
         box-shadow: 2px 2px 10px #333333;
-        background-color: #FCF9F0;
+        background-color: #fcf9f0;
 
         .nav-left {
             width: 20%;
             height: 100%;
-            background: #FCF9F0;
-            border-right: 1px solid #CEAF59;
+            background: #fcf9f0;
+            border-right: 2px solid #ceaf59;
 
             img {
                 margin-left: 40px;
@@ -195,7 +197,7 @@ export default {
         }
 
         .nav-center {
-            background: #FCF9F0;
+            background: #fcf9f0;
             width: 60%;
             height: 100%;
 
@@ -208,8 +210,7 @@ export default {
                     width: 20%;
                     height: 100%;
                     align-items: center;
-                    border-right: 1px solid #CEAF59;
-
+                    border-right: 2px solid #ceaf59;
 
                     img {
                         padding-top: 10px;
@@ -240,8 +241,6 @@ export default {
 
                         >ul {
                             background: rgba(230, 223, 201, 0.9);
-                            border-top: 2px solid #e60012;
-                            transition: all 1s;
 
                             >.one {
                                 background: rgba(206, 175, 89, 0.9);
@@ -270,13 +269,11 @@ export default {
                     display: block;
                 }
             }
-
         }
 
         .nav-right {
             padding: 10px;
         }
-
     }
 
     //页脚导航栏
@@ -336,7 +333,7 @@ export default {
         >.nav-two {
             float: left;
             font-size: 12px;
-            color: #FFFFFF;
+            color: #ffffff;
             line-height: 24px;
             // margin-right: 100px;
             padding-top: 30px;
@@ -386,7 +383,6 @@ export default {
                     color: rgb(255, 103, 1);
                 }
             }
-
         }
     }
 }
