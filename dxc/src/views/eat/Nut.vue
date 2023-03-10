@@ -47,21 +47,19 @@
         </div>
       </div>
       <div class="xzq">
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value" placeholder="请选择" @change="queryCpxl(value)">
           <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-for="item in types" :key="item.id" 
+            :value="item.id" :label="item.title"
           >
           </el-option>
         </el-select>
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value1" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in cp"
             :key="item.value"
             :label="item.label"
-            :value="item.value"
+            :value="item.title"
           >
           </el-option>
         </el-select>
@@ -70,16 +68,16 @@
       </div>
       <div class="neirong">
         <div class="nei">
-          <div class="gd2-2" v-for="item in 4" :key="item.value">
+          <div class="gd2-2" v-for="(item,i) in pastrys" :key="item.id">
             <div class="pic">
-              <img src="../../assets/1158348765f0577b4-a_cut380380.jpg" alt="" />
+              <img :src="pic[i]" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="#">夏威夷果</a>
+                <a href="#">{{item.title}}</a>
               </h1>
               <span
-                >精选优质果实，传统工艺制作，拒绝过度加工和添加，还原果实原香。夏威夷果...</span
+                >{{item.detail}}</span
               >
               <a href="#" class="d1">请进</a>
             </div>
@@ -94,40 +92,73 @@
 </template>
 
 <script>
+import httpApi from '@/http';
 export default {
   data() {
     return {
-      activeIndex:'1',
-      options: [
-        {
-          value: "选项1",
-          label: "黄金糕",
-        },
-        {
-          value: "选项2",
-          label: "双皮奶",
-        },
-        {
-          value: "选项3",
-          label: "蚵仔煎",
-        },
-        {
-          value: "选项4",
-          label: "龙须面",
-        },
-        {
-          value: "选项5",
-          label: "北京烤鸭",
-        },
-      ],
+      activeIndex: '1',
       value: "",
+      pastrys:[],
+      pastrys1:[],
+      pic:[],
+      value1:[],
+      types:[],
+      cp:[]
     };
   },
   methods: {
+    queryAllPastry() {
+      this.pic=[]
+      let params = {
+        cplx_id: 13,
+        page: 1,
+        pagesize: 100,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.pastrys = res.data.data
+        console.log('糕点数据',this.pastrys )
+        let pic = this.pastrys
+        for(let i=0;i<=pic.length;i++ ){
+          this.pic.push((pic[i].pic).split('@',[1]))
+          console.log(this.pic+':图片')
+        }
+      });
+    },
+
+    queryTypes(){
+      httpApi.eatApi.queryFoodsClass().then(res=>{
+        console.log(res);
+        this.types=res.data.data
+      })
+
+    },
+
+    queryCpxl(v){
+      console.log(v);
+      let params={cpfl_id:v}
+      httpApi.eatApi.queryTypeByClass(params).then(res=>{
+        console.log(res);
+        this.cp=res.data.data
+      })
+    },
+    search() {
+      if (this.name.trim() == "") {
+        this.listAll();
+      } else {
+        this.listByName();
+      }
+    },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
   },
+  mounted(){
+    this.queryTypes()  
+    this.queryCpxl()
+    this.queryAllPastry()
+  }
 };
 </script>
 
@@ -177,7 +208,6 @@ export default {
   background: #fcf5e1;
   border-bottom: 1px solid #d9ae6e;
   overflow: hidden;
-
 }
 .erzi {
   width: 1200px;
@@ -254,11 +284,11 @@ export default {
 }
 .nei {
   width: 100%;
-  justify-content: space-between;
+  justify-content: start;
   display: flex;
   flex-wrap: wrap;
 }
-.nei :nth-child(3){
+.nei :nth-child(3) {
   margin-right: 0;
 }
 .gd2-2 {
@@ -267,15 +297,17 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  box-sizing: border-box;
   margin-bottom: 30px;
-
+  margin-right: 30px;
+  box-sizing: border-box;
 }
 
 .pic {
+  width: 380px;
+  overflow: hidden;
   img {
-    width: 380px;
-    height: 380px;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -285,10 +317,9 @@ export default {
   padding: 0 20px;
   color: #fff;
   width: 380px;
-  height: 158px;
+  height: 154px;
   bottom: 0;
   box-sizing: border-box;
-
 }
 
 .txt h1 {
@@ -316,9 +347,11 @@ export default {
   line-height: 44px;
   font-size: 18px;
   float: right;
-  margin: 20px 40px 20px 0;
   border: 1px none;
   color: #fff;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
 
 .d1:hover {

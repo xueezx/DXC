@@ -42,7 +42,7 @@ const foodsApi={
 
   /** 通过id查询产品详情{id} */
   queryFoodsDetailsById(params){
-    let url = BMDURL + "/cplx";
+    let url = BMDURL + "/cplx/query_details";
     return myaxios.get(url,params)
   },
 

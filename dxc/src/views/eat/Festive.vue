@@ -28,9 +28,9 @@
       <el-menu
         :default-active="activeIndex" 
         class="erzi" background-color="#fcf5e1" active-text-color="#d4b970">
-        <el-menu-item index="1">中秋月饼</el-menu-item>
-        <el-menu-item index="2">端午粽子</el-menu-item>
-        <el-menu-item index="3">年品贺礼</el-menu-item>
+        <el-menu-item @click="queryAllPastry()" index="1">中秋月饼</el-menu-item>
+        <el-menu-item @click="queryAllPastry1()" index="2">端午粽子</el-menu-item>
+        <el-menu-item @click="queryAllPastry2()" index="3">年品贺礼</el-menu-item>
       </el-menu>
     </div>
     <div class="contain">
@@ -49,21 +49,19 @@
         </div>
       </div>
       <div class="xzq">
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value" placeholder="请选择" @change="queryCpxl(value)">
           <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-for="item in types" :key="item.id" 
+            :value="item.id" :label="item.title"
           >
           </el-option>
         </el-select>
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value1" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in cp"
             :key="item.value"
             :label="item.label"
-            :value="item.value"
+            :value="item.title"
           >
           </el-option>
         </el-select>
@@ -72,16 +70,16 @@
       </div>
       <div class="neirong">
         <div class="nei">
-          <div class="gd2-2" v-for="item in 12" :key="item.value">
+          <div class="gd2-2" v-for="(item,i) in pastrys" :key="item.id">
             <div class="pic">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+              <img :src="pic[i]" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="#">苏式月饼</a>
+                <a href="#">{{item.title}}</a>
               </h1>
               <span
-                >非遗技艺，百年传承。</span
+                >{{item.texture}}</span
               >
               <a href="#" class="d1">请进</a>
             </div>
@@ -91,51 +89,116 @@
           </div>
         </div>
       </div>
-      <div class="fenye">
-        <div class="page">
-          <el-pagination background layout="prev, pager, next" :total="20">
-        </el-pagination>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
+import httpApi from '@/http';
 export default {
   data() {
     return {
-      activeIndex:'1',
-      options: [
-        {
-          value: "选项1",
-          label: "黄金糕",
-        },
-        {
-          value: "选项2",
-          label: "双皮奶",
-        },
-        {
-          value: "选项3",
-          label: "蚵仔煎",
-        },
-        {
-          value: "选项4",
-          label: "龙须面",
-        },
-        {
-          value: "选项5",
-          label: "北京烤鸭",
-        },
-      ],
+      activeIndex: '1',
       value: "",
+      pastrys:[],
+      pastrys1:[],
+      pic:[],
+      value1:[],
+      types:[],
+      cp:[]
     };
   },
   methods: {
+    queryAllPastry() {
+      this.pic=[]
+      let params = {
+        cplx_id: 8,
+        page: 1,
+        pagesize: 100,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.pastrys = res.data.data
+        console.log('糕点数据',this.pastrys )
+        let pic = this.pastrys
+        for(let i=0;i<=pic.length;i++ ){
+          this.pic.push((pic[i].pic).split('@',[1]))
+          console.log(this.pic+':图片')
+        }
+      });
+    },
+
+    queryTypes(){
+      httpApi.eatApi.queryFoodsClass().then(res=>{
+        console.log(res);
+        this.types=res.data.data
+      })
+
+    },
+
+    queryCpxl(v){
+      console.log(v);
+      let params={cpfl_id:v}
+      httpApi.eatApi.queryTypeByClass(params).then(res=>{
+        console.log(res);
+        this.cp=res.data.data
+      })
+    },
+    search() {
+      if (this.name.trim() == "") {
+        this.listAll();
+      } else {
+        this.listByName();
+      }
+    },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
+    queryAllPastry1() {
+      this.pic=[]
+      let params = {
+        cplx_id: 9,
+        page: 1,
+        pagesize: 100,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.pastrys = res.data.data
+        console.log('糕点数据',this.pastrys )
+        let pic = this.pastrys
+        for(let i=0;i<=pic.length;i++ ){
+          this.pic.push((pic[i].pic).split('@',[1]))
+          console.log(this.pic+':图片')
+        }
+      });
+    },
+    queryAllPastry2() {
+      this.pic=[]
+      let params = {
+        cplx_id: 10,
+        page: 1,
+        pagesize: 100,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.pastrys = res.data.data
+        console.log('糕点数据',this.pastrys )
+        let pic = this.pastrys
+        for(let i=0;i<=pic.length;i++ ){
+          this.pic.push((pic[i].pic).split('@',[1]))
+          console.log(this.pic+':图片')
+        }
+      });
+    },
   },
+  mounted(){
+    this.queryTypes()  
+    this.queryCpxl()
+    this.queryAllPastry()
+  }
 };
 </script>
 
@@ -282,8 +345,11 @@ export default {
 }
 
 .pic {
+  height: 380px;
   img {
     width: 380px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -322,8 +388,9 @@ export default {
   align-items: center;
   line-height: 44px;
   font-size: 18px;
-  float: right;
-  margin: 20px 40px 20px 0;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   border: 1px none;
   color: #fff;
 }
@@ -336,18 +403,5 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-}
-.fenye {
-  width: 1200px;
-  display: flex;
-}
-.page {
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #071727;
-    color: #FFF;
 }
 </style>

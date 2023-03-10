@@ -11,22 +11,23 @@
           }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
+      <!-- 糕点 -->
       <div class="gaodian">
         <div class="tupian">
           <img class="gd1" src="../../assets/gdxl.jpg" alt="" />
           <span @click="$router.push('/home/pastry')">了解更多</span>
         </div>
         <div class="gd2">
-          <div class="gd2-2" v-for="item in pastrys" :key="item.id">
-            <div class="pic">
-              <img src="" alt="" />
+          <div class="gd2-2" v-for="(item,i) in pastrys" :key="item.id">
+            <div style="height: 380px;" class="pic">
+              <img style="height: 100%;" :src="pic[i]" alt="" />
             </div>
             <div class="txt">
               <h1>
                 <a href="#">{{ item.title }}</a>
               </h1>
               <span>{{ item.detail }}</span>
-              <a href="#" class="d1">请进</a>
+              <a href="eat-detail" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -40,80 +41,19 @@
           <span @click="$router.push('/home/snack')">了解更多</span>
         </div>
         <div class="xx2">
-          <div class="xx2-1">
+          <div class="xx2-1" v-for="(item,j) in snacks" :key="item.id">
             <div class="qjin">
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/1206536a45853d5-0_cut300260.jpg"
-                alt=""
-              />
+              <img class="sp" style="height: 100%;" :src="pic1[j]" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
-              <h2>桃酥</h2>
+              <h2>{{ item.title }}</h2>
               <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+                {{ item.detail }}
               </p>
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/13104325014bc9a0d-1_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/139562825f993d13-6_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/133956535abf3882d-2_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -124,23 +64,13 @@
           <span @click="$router.push('/home/festive')">了解更多</span>
         </div>
         <div class="jr">
-          <div class="jr1">
+          <div class="jr1" v-for="(item,l) in festives" :key="item.id">
             <div class="tt1">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+              <img style="height: 585px;" :src="pic2[l]" alt="" />
             </div>
             <div class="text">
-              <h1>苏式月饼</h1>
-              <p>非遗技艺，百年传承。</p>
-              <a class="go" href="#">请进</a>
-            </div>
-          </div>
-          <div class="jr1">
-            <div class="tt1">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
-            </div>
-            <div class="text">
-              <h1>苏式月饼</h1>
-              <p>非遗技艺，百年传承。</p>
+              <h1>{{item.title}}</h1>
+              <p>{{item.texture}}</p>
               <a class="go" href="#">请进</a>
             </div>
           </div>
@@ -152,52 +82,16 @@
           <span @click="$router.push('/home/bread')">了解更多</span>
         </div>
         <div class="gd2">
-          <div class="gd2-2">
-            <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
+          <div class="gd2-2" v-for="(item,i) in breads" :key="item.id">
+            <div style="height: 380px;" class="pic">
+              <img style="height: 100%;" :src="pic3[i]" alt="" />
             </div>
             <div class="txt">
               <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
+                <a href="#">{{ item.title }}</a>
               </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
-              <a href="#" class="d1">请进</a>
-            </div>
-            <div class="logo">
-              <img src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="gd2-2">
-            <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
-            </div>
-            <div class="txt">
-              <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
-              </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
-              <a href="#" class="d1">请进</a>
-            </div>
-            <div class="logo">
-              <img src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="gd2-2">
-            <div class="pic">
-              <img src="../../assets/szgk.jpg" alt="" />
-            </div>
-            <div class="txt">
-              <h1>
-                <a href="/Content/2017/01-05/1534588855.html">山楂锅盔</a>
-              </h1>
-              <span
-                >形似锅盔，馅皮酥松，内如金糕，色泽通透、酸甜可口，疏松软糯，轻轻咬上一...</span
-              >
-              <a href="#" class="d1">请进</a>
+              <span>{{ item.detail }}</span>
+              <a href="eat-detail" class="d1">请进</a>
             </div>
             <div class="logo">
               <img src="../../assets/logo.jpg" alt="" />
@@ -211,80 +105,19 @@
           <span @click="$router.push('/home/nut')">了解更多</span>
         </div>
         <div class="xx2">
-          <div class="xx2-1">
+          <div class="xx2-1" v-for="(item,i) in nuts" :key="item.id">
             <div class="qjin">
               <a href="#">请进</a>
             </div>
             <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/1206536a45853d5-0_cut300260.jpg"
-                alt=""
-              />
+              <img class="sp" style="height: 100%;" :src="pic4[i]" alt="" />
               <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
             <div class="xxzi">
-              <h2>桃酥</h2>
+              <h2>{{ item.title }}</h2>
               <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
+                {{ item.detail }}
               </p>
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/13104325014bc9a0d-1_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/139562825f993d13-6_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-          </div>
-          <div class="xx2-1">
-            <div class="qjin">
-              <a href="#">请进</a>
-            </div>
-            <div class="xxzi">
-              <h2>桃酥</h2>
-              <p>
-                优质小麦粉和新鲜鸡蛋完美比例配料，精心烤制，成就桃酥特色口感。
-              </p>
-            </div>
-            <div class="xxtu">
-              <img
-                class="sp"
-                src="../../assets/133956535abf3882d-2_cut300260.jpg"
-                alt=""
-              />
-              <img class="logo" src="../../assets/logo.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -295,23 +128,13 @@
           <span @click="$router.push('/home/frozen')">了解更多</span>
         </div>
         <div class="jr">
-          <div class="jr1">
+          <div class="jr1" v-for="(item,i) in frozens" :key="item.id">
             <div class="tt1">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
+              <img style="height: 585px;" :src="pic5[i]" alt="" />
             </div>
             <div class="text">
-              <h1>苏式月饼</h1>
-              <p>非遗技艺，百年传承。</p>
-              <a class="go" href="#">请进</a>
-            </div>
-          </div>
-          <div class="jr1">
-            <div class="tt1">
-              <img src="../../assets/951519034a54ae96-b_cut585585.jpg" alt="" />
-            </div>
-            <div class="text">
-              <h1>苏式月饼</h1>
-              <p>非遗技艺，百年传承。</p>
+              <h1>{{item.title}}</h1>
+              <p>{{item.texture}}</p>
               <a class="go" href="#">请进</a>
             </div>
           </div>
@@ -330,14 +153,18 @@ export default {
         page: 1,
         pagesize: 3,
       },
-      pastrys: [],
-      breads: [],
-      festives: [],
-      frozens: [],
-      nuts: [],
-      snacks: [],
-      a: [],
-      pic: {},
+      pastrys: [],  //糕点
+      breads: [],//面包图片
+      festives: [],//节日食品图片
+      frozens: [],//速冻图片
+      nuts: [],//坚果图片
+      snacks: [],//休闲食品图片
+      pic:[],  //糕点图片
+      pic1:[],//休闲食品图片
+      pic2:[],//节日食品图片
+      pic3:[],//面包图片
+      pic4:[],//坚果图片
+      pic5:[],//速冻图片
     };
   },
   methods: {
@@ -347,31 +174,114 @@ export default {
         page: this.pstrysData.page,
         pagesize: this.pstrysData.pagesize,
       };
+      //糕点
       httpApi.eatApi.queryFoodsByPage(params).then((res) => {
         console.log(res);
-        this.pastrys = res.data.data;
-        let p = this.pastrys.pic
-        console.log(p);
-        //       for(var i =0;i<=p.length;i++){
-        //         console.log(p[i].pic)
-        //         this.a.push(p[i].pic)
-        // console.log(this.a)
-        //       }
-        //       let p1=a.split('@',[0])
-        //       // let p2=p1.charAt(0)
-        //       console.log(p1+'图片');
-
-        // let c = [];
-        // p.forEach((item) => {
-        //   let a = item.split('@');
-        //   c.push(a);
-        //   console.log(c);
-        // });
+        this.pastrys = res.data.data
+        console.log('糕点数据',this.pastrys )
+        let pic = this.pastrys
+        for(let i=0;i<=pic.length;i++ ){
+          this.pic.push((pic[i].pic).split('@',[1]))
+          console.log(this.pic+':图片')
+        }
+      });
+    },
+    queryAllSnack() {
+      let params = {
+        cplx_id: 3,
+        page: 1,
+        pagesize: 4,
+      };
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.snacks = res.data.data
+        console.log('休闲食品',this.snacks )
+        let pic1 = this.snacks
+        for(let j=0;j<=pic1.length;j++ ){
+          this.pic1.push((pic1[j].pic).split('@',[1]))
+          console.log(this.pic1+':图片')
+        }
+      });
+    },
+    queryAllFestive() {
+      let params = {
+        cplx_id: 8,
+        page: 1,
+        pagesize: 2,
+      };
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.festives = res.data.data
+        console.log('节日数据',this.festives )
+        let pic2 = this.festives
+        for(let l=0;l<=pic2.length;l++ ){
+          this.pic2.push((pic2[l].pic).split('@',[1]))
+          console.log(this.pic2+':图片')
+        }
+      });
+    },
+    queryAllBread() {
+      let params = {
+        cplx_id: 11,
+        page: this.pstrysData.page,
+        pagesize: this.pstrysData.pagesize,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.breads = res.data.data
+        console.log('糕点数据',this.breads )
+        let pic3 = this.breads
+        for(let i=0;i<=pic3.length;i++ ){
+          this.pic3.push((pic3[i].pic).split('@',[1]))
+          console.log(this.pic3+':图片')
+        }
+      });
+    },
+    queryAllNut() {
+      let params = {
+        cplx_id: 13,
+        page: 1,
+        pagesize: 4,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.nuts = res.data.data
+        console.log('糕点数据',this.nuts )
+        let pic4 = this.nuts
+        for(let i=0;i<=pic4.length;i++ ){
+          this.pic4.push((pic4[i].pic).split('@',[1]))
+          console.log(this.pic4+':图片')
+        }
+      });
+    },
+    queryAllFrozen() {
+      let params = {
+        cplx_id: 16,
+        page: 1,
+        pagesize: 2,
+      };
+      //糕点
+      httpApi.eatApi.queryFoodsByPage(params).then((res) => {
+        console.log(res);
+        this.frozens = res.data.data
+        console.log('糕点数据',this.frozens )
+        let pic5 = this.frozens
+        for(let i=0;i<=pic5.length;i++ ){
+          this.pic5.push((pic5[i].pic).split('@',[1]))
+          console.log(this.pic5+':图片')
+        }
       });
     },
   },
   mounted() {
     this.queryAllPastry();
+    this.queryAllSnack();
+    this.queryAllFestive();
+    this.queryAllBread();
+    this.queryAllNut();
+    this.queryAllFrozen();
   },
 };
 </script>
@@ -433,6 +343,11 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .pic {
@@ -444,11 +359,11 @@ export default {
 .txt {
   position: absolute;
   background: rgba(0, 0, 0, 0.4);
-  padding: 0 20px;
+  padding-left: 20px;
   color: #fff;
   width: 354px;
   height: 158px;
-  bottom: 5px;
+  bottom: 0px;
 }
 
 .txt h1 {
@@ -526,6 +441,7 @@ export default {
   height: 260px;
 
   .sp {
+  object-fit: cover;
     width: 100%;
   }
 }
@@ -571,6 +487,7 @@ export default {
       width: 100%;
       img {
         width: 100%;
+        object-fit: cover;
       }
     }
     .text {

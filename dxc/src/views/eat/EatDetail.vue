@@ -9,7 +9,6 @@
         class="el-menu-demo"
         mode="horizontal"
         :default-active="$route.path"
-        @select="handleSelect"
         background-color="#e6dfc9"
         text-color="#333"
         active-text-color="#fff"
@@ -25,38 +24,28 @@
 
     <!-- main -->
     <div class="contain">
-      <div class="mbx">
-        <!-- 面包屑导航 -->
-        <el-breadcrumb class="bc" separator-class="el-icon-arrow-right">
-          <p>您现在的位置:</p>
-          <el-breadcrumb-item v-for="item in $route.meta.thumb" :key="item">{{
-            item
-          }}</el-breadcrumb-item>
-        </el-breadcrumb>
-      </div>
       <div class="xzq">
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value" placeholder="请选择" @change="queryCpxl(value)">
           <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-for="item in types" :key="item.id" 
+            :value="item.id" :label="item.title"
           >
           </el-option>
         </el-select>
-        <el-select class="sel" v-model="value" placeholder="请选择">
+        <el-select class="sel" v-model="value1" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in cp"
             :key="item.value"
             :label="item.label"
-            :value="item.value"
+            :value="item.title"
           >
           </el-option>
         </el-select>
-        <el-input class="input" placeholder="请输入内容"> </el-input
-        ><el-button class="btn1">筛选</el-button>
+        <el-input class="input" placeholder="请输入内容" @keyup.native.enter="search"
+          v-model="name"> </el-input
+        ><el-button class="btn1" @click="search">筛选</el-button>
       </div>
-      <div class="neirong">
+      <div class="neirong" v-for="item in cp" :key="item.id">
         <div class="nei">
           <el-carousel trigger="click" height="662px">
             <el-carousel-item>
@@ -94,17 +83,17 @@
           </div>
           <div class="xiaozi">
             <div class="left">
-              <p class="title">品名：开心果</p>
-              <p class="title">规格：100g</p>
+              <p class="title">品名：{{item.title}}</p>
+              <p class="title">规格：{{item.specs}}</p>
               <p class="title">主料：</p><span class="chengfen">
-                <p>开心果</p><p>开心果</p>
+                <p>{{item.ingredients}}</p>
               </span>
-              <p class="title">口感：入口醇香、清香酥脆</p>
-              <p class="title">适应人群：</p>
-              <p class="title">储存条件：请放置于干燥阴凉处</p>
+              <p class="title">口感：{{item.texture}}</p>
+              <p class="title">适应人群：{{item.for_people}}</p>
+              <p class="title">储存条件：{{item.torage_condition}}</p>
             </div>
             <div class="right">
-              <p>精选优质果实，传统工艺制作，拒绝过度加工和添加，还原果实原香。开心果果实疙瘩饱满，无漂白，入口醇香，清香酥脆。</p>
+              <p>{{item.detail}}</p>
             </div>
           </div>
         </div>
@@ -114,39 +103,65 @@
 </template>
 
 <script>
+import httpApi from '@/http';
 export default {
   data() {
     return {
-      options: [
-        {
-          value: "选项1",
-          label: "黄金糕",
-        },
-        {
-          value: "选项2",
-          label: "双皮奶",
-        },
-        {
-          value: "选项3",
-          label: "蚵仔煎",
-        },
-        {
-          value: "选项4",
-          label: "龙须面",
-        },
-        {
-          value: "选项5",
-          label: "北京烤鸭",
-        },
-      ],
+      name:"",
+      id:[],
       value: "",
+      value1:[],
+      types:[],
+      cp:[]
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+    queryDetail(){
+      let params={id:1}
+      httpApi.eatApi.queryFoodsDetailsById(params).then(res=>{
+        console.log(res);
+        this.cp=res.data.data
+      })
+    },
+
+    queryTypes(){
+      httpApi.eatApi.queryFoodsClass().then(res=>{
+        console.log(res);
+        this.types=res.data.data
+      })
+
+    },
+
+    queryCpxl(v){
+      console.log(v);
+      let params={cpfl_id:v}
+      httpApi.eatApi.queryTypeByClass(params).then(res=>{
+        console.log(res);
+        this.cp=res.data.data
+      })
+    },
+    search() {
+      if (this.name.trim() == "") {
+        this.listAll();
+      } else {
+        this.listByName();
+      }
+    },
+
+    listByName() {
+      httpApi.eatApi.queryFoodsByName({ name: this.name }).then(
+        (res) => {
+          console.log("模糊查询的结果", res);
+          this.actors = res.data.data;
+        }
+      );
     },
   },
+  mounted(){
+    this.queryTypes()  
+    this.queryCpxl() 
+    this.queryDetail()
+  }
 };
 </script>
 
@@ -207,6 +222,7 @@ export default {
   justify-content: space-evenly;
   color: #664f10;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 .sel {
   width: 346.38px;
